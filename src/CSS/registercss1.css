@@ -1,0 +1,146 @@
+.table-view {
+    /*-fx-base: #FFFFF;
+    -fx-control-inner-background: #FFFFF;
+    */
+    -fx-background-color: #FFFFFF;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.list-view {
+    -fx-base: #C0C0C0;
+    -fx-control-inner-background: #FFFFFF;
+    -fx-background-color: #FFFFFF;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.list-view .list-cell:odd{
+    -fx-background-color: #FFFFFF;
+}
+
+.list-view .list-cell:odd:focused:selected{
+    -fx-background-color: #5bc0de;
+}
+
+.list-view .list-cell:hover{
+    -fx-animated: true;
+    -fx-effect: dropshadow(gaussian, blue, 10, 1.0, 100, 100);
+    -fx-scale-x: 110%;
+
+    }
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color:
+            transparent
+            transparent
+            transparent
+            transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 20pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: #0737A4;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
+
+.tab-pane{
+    -fx-background-color: #FFFFFF;
+}
+
+.pane{
+    -fx-background-color: #FFFFFF;
+}
+
+#pane{
+    -fx-background-color: #FFFFFF;
+}
+
+.scroll-pane{
+    -fx-background-color: #FFFFFF;
+}
+
+.removeJFXButton{
+    -fx-background-color: darkred;
+    -fx-text-fill: #FFFFFF;
+
+}
+
+.removeJFXButton:hover{
+    -fx-background-color: red;
+}
+
+.next{
+    -fx-background-color: #1b6d85;
+    -fx-text-fill: white;
+}
+
+.next:hover{
+    -fx-background-color: #5bc0de;
+    -fx-text-fill: white;
+}
+
+.buttonCompra{
+    -fx-background-color: #4cae4c;
+    -fx-text-fill: white;
+}
+
+.buttonCompra:hover{
+    -fx-background-color: #67b168;
+    -fx-text-fill: white;
+}
+
+.tab-pane *.tab-header-background {
+    -fx-background-color: #2e6da4;
+    -fx-pref-height: 30px;
+}
+
+.mytab *.tab-header-background{
+    -fx-background-color: white;
+    -fx-text-fill: white;
+}
+
+.tab-pane  .tab {
+    -fx-pref-height: 50px;
+    -fx-font-size: 15pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: #FFFFFF;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+    -fx-background-color: #2e6da4;
+}
+
+.mytab .tab{
+    -fx-pref-height: 30px;
+    -fx-font-size: 15pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: #FFFFFF;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+    -fx-background-color: #2e6da4;
+}
+
+.tab-pane .tab *.tab-label{
+    -fx-text-fill: white;
+}
+
+.tab-pane .tab:selected{
+    -fx-background-color: #269abc;
+}
+

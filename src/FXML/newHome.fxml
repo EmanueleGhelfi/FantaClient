@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import com.sun.javafx.scene.control.skin.TableHeaderRow?>
+
+<BorderPane fx:id="background" prefHeight="700" prefWidth="1200" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HomeController">
+    <center>
+      <AnchorPane id="field" prefHeight="685.0" prefWidth="746.0">
+         <children>
+                <ImageView fx:id="imageAtt2" fitHeight="40.0" fitWidth="35.0" layoutX="183.0" layoutY="400.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <Text fx:id="Att2" layoutX="189.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Att2" />
+                <Text fx:id="Dif1" layoutX="501.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Dif1" />
+                <Text fx:id="Cen3" layoutX="414.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Cen3" />
+                <Text fx:id="Att3" layoutX="189.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Att3" />
+                <ImageView fx:id="imageCen2" fitHeight="40.0" fitWidth="35.0" layoutX="410.0" layoutY="222.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView fx:id="imageDif4" fitHeight="40.0" fitWidth="35.0" layoutX="494.0" layoutY="492.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView fx:id="imageAtt3" fitHeight="40.0" fitWidth="35.0" layoutX="183.0" layoutY="305.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView fx:id="imageDif5" fitHeight="40.0" fitWidth="35.0" layoutX="564.0" layoutY="305.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <Text fx:id="Cen1" layoutX="306.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Cen1" />
+                <ImageView fx:id="imagePor" fitHeight="40.0" fitWidth="35.0" layoutX="681.0" layoutY="305.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView fx:id="imageCen3" fitHeight="40.0" fitWidth="35.0" layoutX="410.0" layoutY="392.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView fx:id="imageCen4" fitHeight="40.0" fitWidth="35.0" layoutX="302.0" layoutY="492.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <Text fx:id="Dif4" layoutX="501.0" layoutY="553.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Dif4" />
+                <Text fx:id="Cen5" layoutX="414.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Cen5" />
+                <Text fx:id="Por" layoutX="692.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Por" wrappingWidth="108.13671875" />
+                <Text fx:id="Cen4" layoutX="306.0" layoutY="552.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Cen4" />
+                <Text fx:id="Att1" layoutX="189.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Att1" />
+                <ImageView fx:id="imageDif3" fitHeight="40.0" fitWidth="35.0" layoutX="564.0" layoutY="392.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <Text fx:id="Dif5" layoutX="571.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Dif5" />
+                <ImageView fx:id="imageAtt1" fitHeight="40.0" fitWidth="35.0" layoutX="183.0" layoutY="222.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <Text fx:id="Dif3" layoutX="571.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Dif3" />
+                <ImageView fx:id="imageDif1" fitHeight="40.0" fitWidth="35.0" layoutX="494.0" layoutY="135.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <Text fx:id="Cen2" layoutX="414.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Cen2" />
+                <ImageView fx:id="imageCen1" fitHeight="40.0" fitWidth="35.0" layoutX="302.0" layoutY="135.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView fx:id="imageCen5" fitHeight="40.0" fitWidth="35.0" layoutX="410.0" layoutY="305.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <Text fx:id="Dif2" layoutX="571.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Dif2" />
+                <ImageView fx:id="imageDif2" fitHeight="40.0" fitWidth="35.0" layoutX="564.0" layoutY="222.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <Pane prefHeight="51.0" prefWidth="796.0" style="-fx-background-color: #143153;" styleClass="homeHint">
+                    <children>
+                        <Text fx:id="welcomeText" fill="WHITE" layoutX="14.0" layoutY="14.0" text="Benvenuto, [nome]! Ecco la squadra [Nome Squadra]" wrappingWidth="395.0">
+
+                        </Text>
+                        <Text fill="#fffafa" layoutX="14.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trascina i giocatori dalla tabella nella loro posizione e poi clicca schiera!" wrappingWidth="417.13671875" />
+                    </children>
+                </Pane>
+            <JFXButton fx:id="buttonReset" layoutX="369.0" layoutY="604.0" onAction="#resetTeam" prefHeight="25.0" prefWidth="153.0" text="RESET" />
+            <Text id="textProbForm" fx:id="textProbForm" layoutX="51.0" layoutY="624.0" onMouseClicked="#showProbForm" onMouseEntered="#showUnderline" onMouseExited="#hideUnderline" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textProbForm" text="Probabili Formazioni" wrappingWidth="122.13671875" />
+            <JFXButton fx:id="buttonAutoGen" layoutX="590.0" layoutY="607.0" onAction="#autogenTeam" prefHeight="31.0" prefWidth="174.0" text="AutoGeneration" />
+         </children>
+      </AnchorPane>
+    </center>
+
+    <left>
+        <VBox>
+            <children>
+                <ChoiceBox fx:id="choiceBox" prefWidth="150.0">
+                    <BorderPane.margin>
+                        <Insets left="10.0" />
+                    </BorderPane.margin>
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
+                </ChoiceBox>
+                <Button fx:id="buttonSchiera" mnemonicParsing="false" onAction="#Schiera" prefHeight="25.0" prefWidth="153.0" text="SCHIERA!" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Panchina" textAlignment="CENTER" wrappingWidth="153.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Pane fx:id="panePor" prefHeight="50.0" prefWidth="153.0" styleClass="paneCursor">
+               <children>
+                  <ImageView fx:id="imagePorRis" fitHeight="20.0" fitWidth="20.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Images/spacer.gif" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="textPorRis" layoutX="65.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panchinaro" />
+                  <Text fx:id="textTeamPorRis" layoutX="65.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Squadra" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+            <Pane fx:id="paneDif" layoutX="20.0" layoutY="170.0" prefHeight="50.0" prefWidth="153.0" styleClass="paneCursor">
+               <children>
+                  <ImageView fx:id="imageDifRis" fitHeight="20.0" fitWidth="20.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Images/spacer.gif" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="textDifRis" layoutX="65.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panchinaro" />
+                  <Text fx:id="textTeamDifRis" layoutX="65.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Squadra" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+            <Pane fx:id="paneDif2" layoutX="20.0" layoutY="220.0" prefHeight="50.0" prefWidth="153.0" styleClass="paneCursor">
+               <children>
+                  <ImageView fx:id="imageDifRis2" fitHeight="20.0" fitWidth="20.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Images/spacer.gif" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="textDifRis2" layoutX="65.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panchinaro" />
+                  <Text fx:id="textTeamDifRis2" layoutX="65.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Squadra" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+            <Pane fx:id="paneCen" layoutX="20.0" layoutY="270.0" prefHeight="50.0" prefWidth="153.0" styleClass="paneCursor">
+               <children>
+                  <ImageView fx:id="imageCenRis" fitHeight="20.0" fitWidth="20.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Images/spacer.gif" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="textCenRis" layoutX="65.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panchinaro" />
+                  <Text fx:id="textTeamCenRis" layoutX="65.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Squadra" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+            <Pane fx:id="paneCen2" layoutX="20.0" layoutY="320.0" prefHeight="50.0" prefWidth="153.0" styleClass="paneCursor">
+               <children>
+                  <ImageView fx:id="imageCenRis2" fitHeight="20.0" fitWidth="20.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Images/spacer.gif" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="textCenRis2" layoutX="65.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panchinaro" />
+                  <Text fx:id="textTeamCenRis2" layoutX="65.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Squadra" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+            <Pane fx:id="paneAtt" layoutX="20.0" layoutY="370.0" prefHeight="50.0" prefWidth="153.0" styleClass="paneCursor">
+               <children>
+                  <ImageView fx:id="imageAttRis" fitHeight="20.0" fitWidth="20.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Images/spacer.gif" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="textAttRis" layoutX="65.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panchinaro" />
+                  <Text fx:id="textTeamAttRis" layoutX="65.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Squadra" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+            <Pane fx:id="paneAtt2" layoutX="20.0" layoutY="420.0" prefHeight="50.0" prefWidth="153.0" styleClass="paneCursor">
+               <children>
+                  <ImageView fx:id="imageAttRis2" fitHeight="20.0" fitWidth="20.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Images/spacer.gif" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="textAttRis2" layoutX="65.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panchinaro" />
+                  <Text fx:id="textTeamAttRis2" layoutX="65.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Squadra" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+            </children>
+            <BorderPane.margin>
+                <Insets right="10.0" />
+            </BorderPane.margin>
+            <padding>
+                <Insets left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </VBox>
+    </left>
+
+    <right>
+
+        <TableView fx:id="Rosa" layoutX="414.0" layoutY="14.0" prefHeight="400.0" prefWidth="200.0">
+            <columns>
+                <TableColumn prefWidth="75.0" text="Nome" />
+                <TableColumn prefWidth="75.0" text="Ruolo" />
+                <TableColumn prefWidth="75.0" text="Squadra" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+            <BorderPane.margin>
+                <Insets bottom="20.0" left="10.0" right="20.0" />
+            </BorderPane.margin>
+        </TableView>
+    </right>
+    <top>
+        <ToolBar prefHeight="40.0" prefWidth="1225.0" styleClass="navbar" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="10.0" />
+            </BorderPane.margin>
+            <items>
+                <Button fx:id="sectionRosa" onAction="#goToRosa" prefHeight="26.0" prefWidth="285.0" text="Rosa">
+                    <styleClass>
+                        <String fx:value="nav" />
+                        <String fx:value="ButtonRosa" />
+                    </styleClass></Button>
+                <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="5.0">
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding></Separator>
+                <Button id="ButtonClassifica" fx:id="sectionClassifica" onAction="#goToClassifica" prefWidth="285.0" text="Classifica">
+                    <styleClass>
+                        <String fx:value="nav" />
+                        <String fx:value="ButtonClassifica" />
+                    </styleClass></Button>
+                <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="12.0">
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding></Separator>
+                <Button id="ButtonAndamento" fx:id="sectionAndamento" onAction="#goToAndamento" prefWidth="285.0" text="Andamento">
+                    <styleClass>
+                        <String fx:value="nav" />
+                        <String fx:value="ButtonAndamento" />
+                    </styleClass></Button>
+                <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="9.0">
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding></Separator>
+                <Button id="ButtonMercato" fx:id="sectionMercato" onAction="#goToMercato" prefHeight="25.0" prefWidth="280.0" text="Mercato">
+                    <padding>
+                        <Insets right="10.0" />
+                    </padding>
+                    <styleClass>
+                        <String fx:value="nav" />
+                        <String fx:value="ButtonMercato" />
+                    </styleClass></Button>
+            </items>
+        </ToolBar>
+    </top>
+    <stylesheets>
+        <URL value="@../CSS/mycss.css" />
+        <URL value="@../CSS/personalcss.css" />
+    </stylesheets>
+</BorderPane>

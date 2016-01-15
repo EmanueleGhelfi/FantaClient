@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700" prefWidth="1200" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AndamentoController">
+
+    <top>
+        <ToolBar prefHeight="40.0" prefWidth="1225.0" styleClass="navbar" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="10.0" />
+            </BorderPane.margin>
+            <items>
+                <Button fx:id="sectionRosa" onAction="#goToRosa" prefHeight="26.0" prefWidth="285.0" text="Rosa">
+               <styleClass>
+                  <String fx:value="nav" />
+                  <String fx:value="ButtonRosa" />
+               </styleClass></Button>
+                <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="5.0">
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding></Separator>
+                <Button id="ButtonClassifica" fx:id="sectionClassifica" onAction="#goToClassifica" prefWidth="285.0" text="Classifica">
+               <styleClass>
+                  <String fx:value="nav" />
+                  <String fx:value="ButtonClassifica" />
+               </styleClass></Button>
+                <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="12.0">
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding></Separator>
+                <Button id="ButtonAndamento" fx:id="sectionAndamento" onAction="#goToAndamento" prefWidth="285.0" text="Andamento">
+               <styleClass>
+                  <String fx:value="nav" />
+                  <String fx:value="ButtonAndamento" />
+               </styleClass></Button>
+                <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="9.0">
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding></Separator>
+                <Button id="ButtonMercato" fx:id="sectionMercato" onAction="#goToMercato" prefHeight="25.0" prefWidth="280.0" text="Mercato">
+                    <padding>
+                        <Insets right="10.0" />
+                    </padding>
+               <styleClass>
+                  <String fx:value="nav" />
+                  <String fx:value="ButtonMercato" />
+               </styleClass></Button>
+            </items>
+        </ToolBar>
+    </top>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane prefHeight="1600.0" prefWidth="1182.0">
+               <children>
+                  <Pane fx:id="pane" prefHeight="282.0" prefWidth="1182.0" style="-fx-background-color: #143153;">
+                     <children>
+                        <ImageView fx:id="profileImageView" fitHeight="150.0" fitWidth="200.0" layoutX="56.0" layoutY="55.0" pickOnBounds="true" />
+                        <VBox alignment="CENTER_LEFT" layoutX="368.0" layoutY="55.0" prefHeight="180.0" prefWidth="218.0" spacing="25.0">
+                           <children>
+                              <Text fx:id="username" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+                                 <font>
+                                    <Font name="Segoe UI Light" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Text fx:id="teamName" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome Squadra">
+                                 <font>
+                                    <Font name="Segoe UI Light" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Text fx:id="email" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+                                 <font>
+                                    <Font name="Segoe UI Light" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Text fx:id="dataNascita" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Data di Nascita">
+                                 <font>
+                                    <Font name="Segoe UI Light" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <JFXButton buttonType="RAISED" layoutX="128.0" layoutY="227.0" onAction="#openFileChooser" style="-fx-background-color: white;" styleClass="buttonCambia" text="Cambia..." textFill="black">
+                        </JFXButton>
+                        <VBox layoutX="621.0" layoutY="55.0" prefHeight="150.0" prefWidth="57.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="modUser" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showModUser" prefHeight="30.0" prefWidth="40.0" styleClass="buttonPencil" />
+                              <Button fx:id="modTeam" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showModTeam" prefHeight="30.0" prefWidth="40.0" styleClass="buttonPencil" text="Button" />
+                              <Button fx:id="modMail" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showModEmail" prefHeight="30.0" prefWidth="40.0" styleClass="buttonPencil" text="Button" />
+                              <Button fx:id="modDate" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showModDate" prefHeight="30.0" prefWidth="40.0" styleClass="buttonPencil" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="699.0" layoutY="55.0" prefHeight="180.0" prefWidth="63.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="doneUser" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDoneUser" prefHeight="30.0" prefWidth="40.0" styleClass="buttonDone" text="Button" />
+                              <Button fx:id="doneTeam" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDoneTeam" prefHeight="30.0" prefWidth="40.0" styleClass="buttonDone" text="Button" />
+                              <Button fx:id="doneMail" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDoneEmail" prefHeight="30.0" prefWidth="40.0" styleClass="buttonDone" text="Button" />
+                              <Button fx:id="doneDate" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDoneDate" prefHeight="30.0" prefWidth="40.0" styleClass="buttonDone" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="759.0" layoutY="55.0" prefHeight="150.0" prefWidth="57.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="cancelUser" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onCancelUser" prefHeight="30.0" prefWidth="40.0" styleClass="buttonCancel" text="Button" />
+                              <Button fx:id="cancelTeam" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onCancelTeam" prefHeight="30.0" prefWidth="40.0" styleClass="buttonCancel" text="Button" />
+                              <Button fx:id="cancelMail" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onCancelMail" prefHeight="30.0" prefWidth="40.0" styleClass="buttonCancel" text="Button" />
+                              <Button fx:id="cancelDate" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onCancelDate" prefHeight="30.0" prefWidth="40.0" styleClass="buttonCancel" text="Button" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER_LEFT" layoutX="368.0" layoutY="55.0" prefHeight="180.0" prefWidth="218.0" spacing="8.0">
+                           <children>
+                              <JFXTextField fx:id="userText" focusColor="WHITE" styleClass="textFieldForm" unFocusColor="#6bcdb9">
+                                 <font>
+                                    <Font name="Segoe UI Light" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="teamText" focusColor="WHITE" styleClass="textFieldForm" unFocusColor="#6bcdb9">
+                                 <font>
+                                    <Font name="Segoe UI Light" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="mailText" focusColor="WHITE" styleClass="textFieldForm" unFocusColor="#6bcdb9">
+                                 <font>
+                                    <Font name="Segoe UI Light" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <DatePicker fx:id="datePicker" />
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </VBox>
+                        <JFXButton buttonType="RAISED" layoutX="917.0" layoutY="246.0" onAction="#saveAll" prefHeight="31.0" prefWidth="149.0" ripplerFill="#6e89cc" style="-fx-background-color: white; -fx-text-fill: black;" text="Save" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="-2.0" layoutY="282.0" prefHeight="367.0" prefWidth="1183.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <LineChart fx:id="teamChart" layoutX="322.0" layoutY="60.0" prefHeight="247.0" prefWidth="500.0">
+                          <xAxis>
+                            <NumberAxis fx:id="numberAxis" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Text layoutX="467.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Andamento squadra" wrappingWidth="209.13671875">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="20.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="40.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Miglior Giocatore">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBestPlayer" layoutX="154.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="giocatore">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="mediaBest" layoutX="261.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Media">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="40.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Peggior Giocatore" wrappingWidth="110.13671875">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textWorstPlayer" layoutX="154.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="giocatore">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="mediaWorst" layoutX="261.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Media">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="42.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Più Presenze" wrappingWidth="95.13671875">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textMostPres" layoutX="154.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="giocatore" wrappingWidth="65.298828125">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textPres" layoutX="261.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Presenze">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="38.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Riepilogo">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </center>
+   <stylesheets>
+      <URL value="@../CSS/mycss.css" />
+      <URL value="@../CSS/personalcss.css" />
+   </stylesheets>
+    </BorderPane>

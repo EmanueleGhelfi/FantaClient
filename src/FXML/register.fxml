@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.validation.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RegisterController">
+   <tabs>
+      <Tab text="Profile">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <JFXTextField fx:id="username" layoutX="295.0" layoutY="45.0" promptText="Username" />
+                  <JFXPasswordField fx:id="password1" layoutX="295.0" layoutY="89.0" promptText="Password" />
+                  <JFXPasswordField fx:id="password2" layoutX="295.0" layoutY="139.0" promptText="Password" />
+                  <JFXTextField fx:id="email" layoutX="295.0" layoutY="208.0" promptText="Email" />
+                  <DatePicker fx:id="date" layoutX="282.0" layoutY="255.0" />
+                  <Text layoutX="105.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data di Nascita" wrappingWidth="131.13671875" />
+                  <JFXCheckBox fx:id="confirm" layoutX="324.0" layoutY="303.0" />
+                  <Text layoutX="105.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dichiaro di accettare le email" wrappingWidth="184.13671875" />
+                   <JFXButton buttonType="RAISED" layoutX="158.0" layoutY="438.0" onAction="#GoToNextTab" prefHeight="25.0" prefWidth="126.0" ripplerFill="BLACK" style="-fx-background-color: cyan;" text="Next" />
+                  <Text layoutX="105.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="105.13671875" />
+                  <Text layoutX="105.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="80.13671875" />
+                  <Text layoutX="105.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conferma Password" wrappingWidth="112.13671875" />
+                  <Text layoutX="104.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="113.13671875" />
+                  <Text layoutX="105.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scegli foto" />
+                  <JFXButton fx:id="selectButton" layoutX="276.0" layoutY="361.0" onAction="#openFileChooser" text="Scegli">
+                  </JFXButton>
+                  <ImageView fx:id="profileImage" fitHeight="80.0" fitWidth="94.0" layoutX="397.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="errorUser" fitHeight="30.0" fitWidth="25.0" layoutX="491.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/cancelRegister.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="errorPassword" fitHeight="30.0" fitWidth="25.0" layoutX="491.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/cancelRegister.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="errorEmail" fitHeight="30.0" fitWidth="25.0" layoutX="491.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/cancelRegister.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Team">
+        <content>
+            <ScrollPane prefHeight="738.0" prefViewportHeight="671.0" prefViewportWidth="1000.0" prefWidth="1000.0" style="-fx-background-color: white;">
+               <content>
+                   <Pane id="pane" prefHeight="902.0" prefWidth="1206.0">
+                       <children>
+                           <ListView fx:id="myPor" layoutX="14.0" layoutY="146.0" prefHeight="297.0" prefWidth="328.0" />
+                           <ListView fx:id="myAtk" layoutX="915.0" layoutY="147.0" prefHeight="298.0" prefWidth="260.0" />
+                           <Text layoutX="378.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hai ancora a disposizione:" wrappingWidth="234.13671875">
+                              <font>
+                                 <Font name="Century Gothic Bold" size="14.0" />
+                              </font>
+                           </Text>
+                            <JFXButton fx:id="confirmButton" buttonType="RAISED" layoutX="745.0" layoutY="46.0" onAction="#SendTeam" prefHeight="25.0" prefWidth="126.0" ripplerFill="BLACK" style="-fx-background-color: cyan;" text="Conferma" />
+                           <JFXTextField fx:id="teamName" layoutX="183.0" layoutY="44.0" promptText="TeamName" />
+                           <ListView fx:id="myDef" layoutX="354.0" layoutY="148.0" prefHeight="300.0" prefWidth="273.0" />
+                           <Label layoutX="94.0" layoutY="51.0" text="TeamName" />
+                           <Label layoutX="934.0" layoutY="121.0" prefHeight="17.0" prefWidth="198.0" text="Attaccanti" />
+                           <Label layoutX="640.0" layoutY="129.0" prefHeight="17.0" prefWidth="189.0" text="Centrocampisti" />
+                           <Label layoutX="21.0" layoutY="129.0" prefHeight="17.0" prefWidth="146.0" styleClass="labelCreate" text="Portieri" />
+                           <Label layoutX="354.0" layoutY="129.0" prefHeight="17.0" prefWidth="201.0" text="Difensori" />
+                           <ListView fx:id="myCen" layoutX="640.0" layoutY="147.0" prefHeight="301.0" prefWidth="262.0" />
+                           <TabPane layoutX="229.0" layoutY="502.0" prefHeight="400.0" prefWidth="542.0" tabClosingPolicy="UNAVAILABLE">
+                             <tabs>
+                               <Tab text="Portieri">
+                                 <content>
+                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="360.0" prefWidth="424.0">
+                                       <children>
+                                           <TableView fx:id="listPor" layoutX="-1.0" layoutY="1.0" prefHeight="375.0" prefWidth="541.0">
+                                               <columns>
+                                                   <TableColumn prefWidth="75.0" text="Nome" />
+                                                   <TableColumn prefWidth="75.0" text="Squadra" />
+                                                   <TableColumn prefWidth="75.0" text="Costo" />
+                                                   <TableColumn prefWidth="75.0" text="Compra" />
+                                               </columns>
+                                               <columnResizePolicy>
+                                                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                               </columnResizePolicy>
+                                           </TableView>
+                                       </children>
+                                           </AnchorPane>
+                                 </content>
+                               </Tab>
+                               <Tab text="Difensori">
+                                 <content>
+                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                           <TableView fx:id="listDef" layoutX="-1.0" layoutY="1.0" prefHeight="300.0" prefWidth="541.0">
+                                               <columns>
+                                                   <TableColumn prefWidth="75.0" text="Nome" />
+                                                   <TableColumn prefWidth="75.0" text="Squadra" />
+                                                   <TableColumn prefWidth="75.0" text="Costo" />
+                                                   <TableColumn prefWidth="75.0" text="Compra" />
+                                               </columns>
+                                               <columnResizePolicy>
+                                                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                               </columnResizePolicy>
+                                           </TableView>
+                                       </children>
+                                           </AnchorPane>
+                                 </content>
+                               </Tab>
+                                 <Tab text="Centrocampisti">
+                                     <content>
+                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="360.0" prefWidth="424.0">
+                                             <children>
+                                                 <TableView fx:id="listCen" layoutX="-1.0" layoutY="1.0" prefHeight="300.0" prefWidth="541.0">
+                                                     <columns>
+                                                         <TableColumn prefWidth="75.0" text="Nome" />
+                                                         <TableColumn prefWidth="75.0" text="Squadra" />
+                                                         <TableColumn prefWidth="75.0" text="Costo" />
+                                                         <TableColumn prefWidth="75.0" text="Compra" />
+                                                     </columns>
+                                                     <columnResizePolicy>
+                                                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                     </columnResizePolicy>
+                                                 </TableView>
+                                             </children>
+                                                 </AnchorPane>
+                                     </content>
+                                 </Tab>
+                                 <Tab text="Attaccanti">
+                                     <content>
+                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="360.0" prefWidth="424.0">
+                                             <children>
+                                                 <TableView fx:id="listAtt" layoutX="-1.0" layoutY="1.0" prefHeight="300.0" prefWidth="541.0">
+                                                     <columns>
+                                                         <TableColumn prefWidth="75.0" text="Nome" />
+                                                         <TableColumn prefWidth="75.0" text="Squadra" />
+                                                         <TableColumn prefWidth="75.0" text="Costo" />
+                                                         <TableColumn prefWidth="75.0" text="Compra" />
+                                                     </columns>
+                                                     <columnResizePolicy>
+                                                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                     </columnResizePolicy>
+                                                 </TableView>
+                                             </children>
+                                                 </AnchorPane>
+                                     </content>
+                                 </Tab>
+                             </tabs>
+                           </TabPane>
+                           <Text fx:id="moneyLabel" layoutX="586.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="250">
+                              <font>
+                                 <Font name="Bodoni MT Bold" size="14.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="627.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$">
+                              <font>
+                                 <Font name="Bodoni MT Black Italic" size="12.0" />
+                              </font>
+                           </Text>
+                       </children>
+                   </Pane>
+               </content>
+            </ScrollPane>
+        </content>
+      </Tab>
+   </tabs>
+    </TabPane>

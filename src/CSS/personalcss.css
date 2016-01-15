@@ -1,0 +1,302 @@
+#mRoot{
+    /* -fx-background-image: url("/Images/field.jpg");
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100%;
+    */
+
+    -fx-fit-to-height: true;
+}
+
+#field{
+    -fx-background-image: url("/Images/campo-calcio-tagliato.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center;
+    -fx-background-size: 100%;
+}
+
+#mTable{
+    -fx-background-color: transparent;
+}
+
+.nav{
+    -fx-background-radius: 0;
+    -fx-text-fill: white;
+    -fx-border-radius: 0;
+}
+
+.navbar{
+    -fx-background-color: steelblue;
+}
+
+.list-cell:empty {
+    -fx-opacity: 0;
+}
+
+.button{
+    -fx-background-color: steelblue;
+    -fx-text-fill: white;
+}
+
+.nav:hover{
+    -fx-background-color: #204d74;
+    -fx-scale-y: 120%;
+    -fx-scale-x: 110%;
+
+}
+
+.removeButton{
+    -fx-background-color: red;
+    -fx-font-size: 10;
+    -fx-padding: 2;
+    -fx-text-fill: white;
+}
+
+.buttonCompra{
+    -fx-background-color: limegreen;
+    -fx-font-size: 10;
+    -fx-padding: 2;
+    -fx-text-fill: white;
+}
+
+.infoButton{
+    -fx-background-color: #204d74;
+    -fx-font-size: 10;
+    -fx-padding: 2;
+    -fx-text-fill: white;
+}
+
+.playername{
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-fill: white;
+    -fx-border-color: white;
+
+}
+
+.playername:hover{
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-fill: white;
+    -fx-border-color: white;
+    -fx-cursor: hand;
+    -fx-scale-x: 110%;
+    -fx-scale-y: 110%;
+    -fx-border-width: 20;
+}
+
+.highlightRow {
+    -fx-background-color: green;
+    -fx-text-fill: white;
+}
+
+
+.effect:hover{
+    -fx-cursor: hand;
+    -fx-scale-x: 120%;
+    -fx-scale-y: 120%;
+}
+
+/*
+.ImageZoom{
+    -fx-scale-x: 130%;
+    -fx-scale-y: 130%;
+    -fx-border-width: 10px;
+    -fx-border-color: white;
+}
+*/
+
+
+.ButtonRosa{
+    -fx-background-image: url("/Images/home.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right;
+    -fx-background-size: contain;
+}
+
+.ButtonMercato{
+    -fx-background-image: url("/Images/mercato.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right;
+    -fx-background-size: contain;
+}
+
+.ButtonAndamento{
+    -fx-background-image: url("/Images/profile.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right;
+    -fx-background-size: contain;
+}
+
+.ButtonClassifica{
+    -fx-background-image: url("/Images/classifica.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right;
+    -fx-background-size: contain;
+
+}
+
+.homeHint{
+  -fx-background-color:  #143153;
+    -fx-text-fill: white;
+}
+
+
+.default-color0.chart-series-line { -fx-stroke: #2e6da4; }
+
+.chart-symbol { /* solid circle */
+    -fx-background-color: #2e6da4;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+
+.default-color1.chart-symbol { /* solid square */
+    -fx-background-color: #2e6da4;
+    -fx-background-radius: 0;
+}
+
+.default-color0.chart-line-symbol {
+    -fx-background-color: #0181e2, white;
+    -fx-background-radius: 5px;
+
+}
+
+.buttonCambia{
+    -fx-text-fill: black;
+}
+
+/* Prova listview */
+.list-view {
+    -fx-base: #C0C0C0;
+    -fx-control-inner-background: #FFFFFF;
+    -fx-background-color: #FFFFFF;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.list-view .list-cell:odd{
+    -fx-background-color: #FFFFFF;
+}
+
+.list-view .list-cell:odd:focused:selected{
+    -fx-background-color: #5bc0de;
+}
+
+
+
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color:
+            transparent
+            transparent
+            transparent
+            transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 12pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: #0737A4;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
+
+.table-view {
+    /*-fx-base: #FFFFF;
+    -fx-control-inner-background: #FFFFF;
+    */
+    -fx-background-color: #FFFFFF;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.textProbForm:hover{
+    -fx-cursor: hand;
+}
+
+.titolare:hover{
+    -fx-background-color: #269abc;
+    -fx-text-fill: white;
+}
+
+
+.titolare:odd:hover{
+    -fx-background-color: #269abc;
+    -fx-text-fill: white;
+}
+
+.list-view .list-cell:odd:hover{
+    -fx-background-color: #269abc;
+    -fx-text-fill: white;
+}
+
+
+.riserva:hover{
+    -fx-background-color: #269abc;
+    -fx-text-fill: white;
+}
+
+
+.riserva:odd:hover{
+    -fx-background-color: #269abc;
+    -fx-text-fill: white;
+}
+
+.buttonPencil{
+    -fx-background-image: url("/Images/pencil.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-color: transparent;
+    -fx-background-radius: 18px;
+    -fx-border-radius: 15px;
+    -fx-border-color: transparent;
+}
+
+.buttonPencil:selected .buttonPencil:pressed .buttonPencil:focused{
+    -fx-border-color: transparent;
+}
+
+.buttonDone{
+    -fx-background-image: url("/Images/done.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-color: transparent;
+}
+
+
+.buttonCancel{
+    -fx-background-image: url("/Images/cancel.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-color: transparent;
+}
+
+.textFieldForm{
+    -fx-text-fill: white;
+}
+
+.paneCursor:hover{
+    -fx-cursor: hand;
+}
+
+
+
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox fx:id="child" prefHeight="39.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.NavController">
+   <children>
+       <ToolBar prefHeight="40.0" prefWidth="1200.0" styleClass="navbar" BorderPane.alignment="CENTER">
+           <BorderPane.margin>
+               <Insets bottom="10.0" />
+           </BorderPane.margin>
+           <items>
+               <Button fx:id="sectionRosa" onAction="#goToRosa" prefHeight="26.0" prefWidth="290.0" styleClass="nav" text="Rosa" />
+               <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="5.0" />
+               <Button fx:id="sectionClassifica" onAction="#goToClassifica" prefWidth="290.0" styleClass="nav" text="Classifica" />
+               <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="12.0" />
+               <Button fx:id="sectionAndamento" onAction="#goToAndamento" prefWidth="290.0" styleClass="nav" text="Andamento" />
+               <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="9.0" />
+               <Button fx:id="sectionMercato" onAction="#goToMercato" prefWidth="250.0" styleClass="nav" text="Mercato" />
+           </items>
+       </ToolBar>
+   </children>
+</HBox>
