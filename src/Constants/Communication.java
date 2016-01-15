@@ -53,4 +53,6 @@ public class Communication {
     public static final String SENDMODIFIEDUSER = "SENDMODIFIEDUSER";
     public static final String Auth = "Auth";
     public static final String SENDTEAM = "SENDTEAM";
+
+    public static String iao = "iao";
 }
