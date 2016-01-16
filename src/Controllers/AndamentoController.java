@@ -387,8 +387,8 @@ public class AndamentoController extends BaseController {
         doneDate.setVisible(false);
         cancelDate.setVisible(false);
         LocalDate mydate = datePicker.getValue();
-
-        dataNascita.setText(""+mydate.getDayOfMonth()+"/"+mydate.getMonthValue()+"/"+mydate.getYear());
+        if(mydate!=null)
+            dataNascita.setText(""+mydate.getDayOfMonth()+"/"+mydate.getMonthValue()+"/"+mydate.getYear());
         modDate.setVisible(true);
     }
 
@@ -467,6 +467,28 @@ public class AndamentoController extends BaseController {
             @Override
             public void handle(ActionEvent event) {
                 button.setVisible(false);
+                switch (button.getId()){
+                    case "user":
+                        if(!doneUser.isVisible()){
+                            button.setVisible(true);
+                        }
+                        break;
+                    case "team":
+                        if(!doneTeam.isVisible()){
+                            button.setVisible(true);
+                        }
+                        break;
+                    case "mail":
+                        if(!doneMail.isVisible()){
+                            button.setVisible(true);
+                        }
+                        break;
+                    case "date":
+                        if(!doneMail.isVisible()){
+                            button.setVisible(true);
+                        }
+                        break;
+                }
             }
         });
     }
