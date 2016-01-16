@@ -484,7 +484,7 @@ public class AndamentoController extends BaseController {
                         }
                         break;
                     case "date":
-                        if(!doneMail.isVisible()){
+                        if(!doneDate.isVisible()){
                             button.setVisible(true);
                         }
                         break;
