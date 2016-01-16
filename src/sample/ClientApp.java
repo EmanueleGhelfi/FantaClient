@@ -155,7 +155,7 @@ public class ClientApp extends Application {
 
     public void changeApp(String text){
        // controller.setOutput(text);
-        client = new ClientClass();
+        client = new ClientClass("localhost");
         client.init();
         Platform.runLater(new Runnable() {
             @Override

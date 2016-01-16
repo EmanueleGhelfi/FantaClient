@@ -1802,6 +1802,7 @@ public class HomeController extends BaseController{
         Rosa.setItems(FXCollections.observableArrayList(team));
 
         System.out.println("Ecco il modulo: "+ contDif +"-" +contCen + "-"+contAtt);
+        //TODO: Improve
         if((contDif==4 || contDif==3 || contDif==5)&& (contCen==3 || contCen==4 || contCen==5) && (contAtt== 3 || contAtt==2 || contAtt==1))
             SelectModule(contDif,contCen,contAtt,team);
 

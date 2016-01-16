@@ -19,7 +19,7 @@ public class ClientClass {
     public ClientClass() {
         //this.hostName = "localhost";
        //this.hostName = "192.168.1.101";
-        this.hostName = "10.168.106.141";
+        this.hostName = "localhost";
         this.portNumber = 4444;
     }
 

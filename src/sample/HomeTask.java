@@ -120,6 +120,10 @@ public class HomeTask extends Task {
                                 homeApp.setNeedToConnect(false);
                                 homeApp.ShowLoginDialog();
                                 break;
+                            case("GETMONEY"):
+                                client.getOut().println(""+homeApp.getUser().getSoldi());
+                                System.out.println("Sent money");
+                                break;
                         }
                     } else {
                         //active = false;

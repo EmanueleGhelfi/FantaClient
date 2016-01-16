@@ -107,8 +107,9 @@ public class MercatoController extends BaseController {
                 }
             }
 
-            calcolaSoldi();
-            moneyLabel.setText("Soldi: "+money);
+            //calcolaSoldi();
+            this.money=getHome().getUser().getSoldi();
+            moneyLabel.setText("Soldi: "+getHome().getUser().getSoldi());
 
             initList();
 
@@ -453,12 +454,12 @@ public class MercatoController extends BaseController {
             this.myTeam.addAll(myCen);
             this.myTeam.addAll(myAtk);
             getHome().setTeam(myTeam);
+            getHome().getUser().setSoldi(money);
             getHome().sendModifiedTeamToServer();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success!");
             alert.setHeaderText(null);
             alert.setContentText("Formazione inviata con successo al server!");
-
             alert.showAndWait();
         }
         else {

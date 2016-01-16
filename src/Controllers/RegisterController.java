@@ -319,7 +319,10 @@ public class RegisterController extends BaseController {
         myTeam.addAll(arrayAtk);
         if(myTeam.size()==(maxcen+maxdif+maxport+maxatt) && (teamString!="" && teamString!=null) && (passwordString!= "" && passwordString!=null) && (userName!= "" && userName!=null) && (textEmail!="" && textEmail!=null) && mydate!=null && selectedFile!=null){
             try {
-                clientApp.SendTeam(new User(mydate,textEmail,passwordString,myTeam,teamString,userName),selectedFile);
+                //clientApp.SendTeam(new User(mydate,textEmail,passwordString,myTeam,teamString,userName),selectedFile);
+                User user = new User(mydate,textEmail,passwordString,myTeam,teamString,userName);
+                user.setSoldi(money);
+                clientApp.SendTeam(user,selectedFile);
             } catch (IOException e) {
                 e.printStackTrace();
             }

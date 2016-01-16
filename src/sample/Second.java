@@ -137,6 +137,7 @@ public class Second extends Application {
 
     public void SendTeam(User newUser, File file) throws IOException {
         this.newUser = newUser;
+        //this.newUser.setSoldi(money);
         this.selectedFile=file;
         client.getOut().println(Communication.SENDTEAM);
         //client.getOut().println("SENDFILE");
