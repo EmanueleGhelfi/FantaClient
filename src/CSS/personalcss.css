@@ -106,13 +106,15 @@
 }
 */
 
-
+/*
 .ButtonRosa{
     -fx-background-image: url("/Images/home.png");
     -fx-background-repeat: no-repeat;
     -fx-background-position: right;
     -fx-background-size: contain;
 }
+*/
+
 
 .ButtonMercato{
     -fx-background-image: url("/Images/mercato.png");
@@ -252,6 +254,16 @@
 
 
 .riserva:odd:hover{
+    -fx-background-color: #269abc;
+    -fx-text-fill: white;
+}
+
+.classHover:odd:hover{
+    -fx-background-color: #269abc;
+    -fx-text-fill: white;
+}
+
+.classHover:hover{
     -fx-background-color: #269abc;
     -fx-text-fill: white;
 }

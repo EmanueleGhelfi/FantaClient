@@ -208,11 +208,20 @@
                 <Insets bottom="10.0" />
             </BorderPane.margin>
             <items>
-                <Button fx:id="sectionRosa" onAction="#goToRosa" prefHeight="26.0" prefWidth="285.0" text="Rosa">
-                    <styleClass>
-                        <String fx:value="nav" />
-                        <String fx:value="ButtonRosa" />
-                    </styleClass></Button>
+            <Pane fx:id="sectionRosa" onMouseClicked="#goToRosa" onMouseEntered="#ShowRosaUnderline" onMouseExited="#HideRosaUnderline" prefHeight="31.0" prefWidth="280.0" styleClass="ButtonRosa">
+               <children>
+                  <Text fill="WHITE" id="Rosa" fontSmoothingType="LCD" layoutX="118.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rosa">
+                     <font>
+                        <Font name="Segoe UI Light" size="18.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="26.0" fitWidth="40.0" layoutX="207.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/home.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
                 <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="5.0">
                     <padding>
                         <Insets left="10.0" right="10.0" />

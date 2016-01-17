@@ -63,7 +63,8 @@ public class HomeController extends BaseController{
     @FXML private Text Att3;
     @FXML private ChoiceBox choiceBox;
     @FXML private TableView Rosa;
-    @FXML private Button sectionRosa;
+    //@FXML private Button sectionRosa;
+    @FXML private Pane sectionRosa;
     @FXML private Button sectionMercato;
     @FXML private Button sectionClassifica;
     @FXML private Button sectionAndamento;
@@ -174,6 +175,7 @@ public class HomeController extends BaseController{
         buttonSchiera.setFocusTraversable(false);
 
         buttonReset.setFocusTraversable(false);
+
 
         scaleArray = new ArrayList<>();
 
@@ -2564,5 +2566,7 @@ public class HomeController extends BaseController{
         scaleTransition.setToY(1);
         scaleTransition.playFromStart();
     }
+
+
 }
 

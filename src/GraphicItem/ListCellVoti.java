@@ -50,12 +50,12 @@ public class ListCellVoti extends ListCell <PlayerVoto> {
             gridPane.getColumnConstraints().add(new ColumnConstraints(70));
             */
             ColumnConstraints col1 = new ColumnConstraints();
-            col1.setPercentWidth(30);
+            col1.setPercentWidth(60);
             ColumnConstraints col2 = new ColumnConstraints();
-            col2.setPercentWidth(10);
-            ColumnConstraints col3 = new ColumnConstraints();
-            col3.setPercentWidth(15);
-            gridPane.getColumnConstraints().addAll(col1,col2,col3);
+            col2.setPercentWidth(20);
+            //ColumnConstraints col3 = new ColumnConstraints();
+            //col3.setPercentWidth(15);
+            gridPane.getColumnConstraints().addAll(col1,col2);
 
             Text name = new Text(item.getCognome());
             gridPane.add(name,0,0);
@@ -107,7 +107,7 @@ public class ListCellVoti extends ListCell <PlayerVoto> {
 
             gridPane.add(imageView,2,0);
 
-
+            /*
             Button button = new Button();
             button.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
@@ -123,6 +123,7 @@ public class ListCellVoti extends ListCell <PlayerVoto> {
             button.getStyleClass().add("infoButton");
 
             gridPane.add(button,3,0);
+            */
 
             if(item.isTitolare()){
                 getStyleClass().add("titolare");

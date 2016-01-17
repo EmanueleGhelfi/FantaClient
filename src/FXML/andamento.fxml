@@ -64,7 +64,7 @@
    <center>
       <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <content>
-          <AnchorPane prefHeight="1600.0" prefWidth="1182.0">
+          <AnchorPane prefHeight="650.0" prefWidth="1182.0">
                <children>
                   <Pane fx:id="pane" prefHeight="282.0" prefWidth="1182.0" style="-fx-background-color: #143153;">
                      <children>
@@ -106,10 +106,10 @@
                         </JFXButton>
                         <VBox layoutX="621.0" layoutY="55.0" prefHeight="150.0" prefWidth="57.0" spacing="20.0">
                            <children>
-                              <Button fx:id="modUser" id="user" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showModUser" prefHeight="30.0" prefWidth="40.0" styleClass="buttonPencil" />
-                              <Button fx:id="modTeam" id="team" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showModTeam" prefHeight="30.0" prefWidth="40.0" styleClass="buttonPencil" text="Button" />
-                              <Button fx:id="modMail" id="mail" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showModEmail" prefHeight="30.0" prefWidth="40.0" styleClass="buttonPencil" text="Button" />
-                              <Button fx:id="modDate" id="date" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showModDate" prefHeight="30.0" prefWidth="40.0" styleClass="buttonPencil" text="Button" />
+                              <Button id="user" fx:id="modUser" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showModUser" prefHeight="30.0" prefWidth="40.0" styleClass="buttonPencil" />
+                              <Button id="team" fx:id="modTeam" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showModTeam" prefHeight="30.0" prefWidth="40.0" styleClass="buttonPencil" text="Button" />
+                              <Button id="mail" fx:id="modMail" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showModEmail" prefHeight="30.0" prefWidth="40.0" styleClass="buttonPencil" text="Button" />
+                              <Button id="date" fx:id="modDate" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showModDate" prefHeight="30.0" prefWidth="40.0" styleClass="buttonPencil" text="Button" />
                            </children>
                         </VBox>
                         <VBox layoutX="699.0" layoutY="55.0" prefHeight="180.0" prefWidth="63.0" spacing="20.0">

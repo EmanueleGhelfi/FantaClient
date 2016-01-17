@@ -2,6 +2,7 @@ package Controllers;
 
 import Model.Player;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import sample.Home;
 
 /**
@@ -37,5 +38,8 @@ public class BaseController {
     }
 
     public void OnCompra(Player item) {
+    }
+
+    public void ShowRosaUnderline(Event event) {
     }
 }

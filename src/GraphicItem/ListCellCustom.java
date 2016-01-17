@@ -73,7 +73,7 @@ public class ListCellCustom extends javafx.scene.control.ListCell <Player>{
             button.setPrefHeight(10.00);
             button.setText("REMOVE");
             button.getStyleClass().add("removeButton");
-
+            getStyleClass().add("classHover");
             gridPane.add(button,2,0);
 
             setGraphic(gridPane);
