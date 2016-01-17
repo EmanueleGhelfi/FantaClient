@@ -1,6 +1,8 @@
 package Controllers;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventDispatchChain;
 import javafx.fxml.FXML;
 import javafx.scene.layout.HBox;
 
@@ -28,7 +30,7 @@ public class NavController extends BaseController {
     }
 
     @Override
-    public void goToRosa(ActionEvent actionEvent) {
+    public void goToRosa(Event actionEvent) {
         super.goToRosa(actionEvent);
     }
 }

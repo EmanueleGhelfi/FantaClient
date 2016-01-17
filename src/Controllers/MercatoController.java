@@ -3,6 +3,7 @@ package Controllers;
 import Model.Player;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -571,11 +572,11 @@ public class MercatoController extends BaseController {
     }
 
     @Override
-    public void goToRosa(ActionEvent actionEvent) {
+    public void goToRosa(Event event) {
         if(hasModified){
             //Show the alert
             if(ShowAlert()){
-                super.goToRosa(actionEvent);
+                super.goToRosa(event);
             }
             else {
                 // Users remain in current section
@@ -583,7 +584,7 @@ public class MercatoController extends BaseController {
 
         }
         else {
-            super.goToRosa(actionEvent);
+            super.goToRosa(event);
         }
     }
 }

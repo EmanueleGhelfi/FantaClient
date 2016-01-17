@@ -87,6 +87,7 @@ public class Home extends Application {
     private ClassificaController classificaController;
     private AndamentoController andamentoController;
     private MercatoController mercatoController;
+    private EndGameController endGameController;
     private Stage primaryStage;
 
 
@@ -106,6 +107,8 @@ public class Home extends Application {
             "/FXML/andamento.fxml";
     // Container for all the screens
     private ScreensController mainContainer;
+    //Scene
+    private Scene scene;
 
     public static void main(String[] args) {
         launch(args);
@@ -162,7 +165,7 @@ public class Home extends Application {
 
             root = new Group();
             root.getChildren().addAll(mainContainer);
-            Scene scene = new Scene(root);
+            scene = new Scene(root);
 
 
 
@@ -326,6 +329,14 @@ public class Home extends Application {
 
     public void setNeedToSyncProfile(boolean needToSyncProfile) {
         this.needToSyncProfile = needToSyncProfile;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
 
     public void initTable() {
@@ -693,5 +704,47 @@ public void goToRosa() {
     public void dismissDialog() {
         dialog.hide();
         needToConnect=false;
+    }
+
+    public void showEndPopup() {
+        Home home = this;
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("END END");
+                FXMLLoader loader = new FXMLLoader();
+                //it was second
+                loader.setLocation(getClass().getResource("/FXML/endGame.fxml"));
+                Parent root = null;
+                Stage secondaryStage = new Stage();
+                try {
+                    root = loader.load();
+
+
+                    // Show the scene containing the root layout.
+                    //Scene scene = new Scene(rootLayout);
+                    //primaryStage.setScene(scene);
+
+                    // Give the controller access to the main app.
+
+                    endGameController = loader.getController();
+                    endGameController.setHome(home);
+                    //ndGameController.initView();
+                    //Parent root = loader.load(getClass().getResource("sample.fxml"));
+                    secondaryStage.setTitle("Hello World");
+                    Scene scene = new Scene(root, 500, 500);
+                    scene.getStylesheets().add(getClass().getResource("/CSS/registercss1.css").toExternalForm());
+                    secondaryStage.setScene(scene);
+                    //Handle click on x
+                    secondaryStage.show();
+
+                    endGameController.startAnimation();
+                }
+                catch (Exception e ){
+                    e.printStackTrace();
+                }
+            }
+        });
+
     }
 }

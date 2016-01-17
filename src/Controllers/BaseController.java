@@ -3,7 +3,10 @@ package Controllers;
 import Model.Player;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.scene.text.Text;
 import sample.Home;
+
+import java.util.Vector;
 
 /**
  * Created by Emanuele on 01/12/2015.
@@ -21,7 +24,7 @@ public class BaseController {
         this.home = home;
     }
 
-    public void goToRosa(ActionEvent actionEvent) {
+    public void goToRosa(Event event) {
         home.goToRosa();
     }
 
@@ -40,6 +43,4 @@ public class BaseController {
     public void OnCompra(Player item) {
     }
 
-    public void ShowRosaUnderline(Event event) {
-    }
 }

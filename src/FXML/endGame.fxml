@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EndGameController">
+   <children>
+      <StackPane fx:id="stackPane" layoutX="114.0" layoutY="27.0" prefHeight="101.0" prefWidth="114.0">
+         <children>
+            <Circle fill="DODGERBLUE" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="1°" textAlignment="CENTER" wrappingWidth="29.9921875">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </StackPane>
+      <CubicCurve fx:id="curve" controlX1="25.0" controlX2="75.0" controlY1="-50.0" controlY2="-50.0" endX="100.0" fill="WHITE" layoutX="229.0" layoutY="77.0" stroke="BLACK" />
+      <ImageView fitHeight="150.0" fitWidth="260.0" layoutX="181.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/podium.jpg" />
+         </image>
+      </ImageView>
+      <CubicCurve fx:id="curve1" controlX1="75.0" controlX2="50.0" controlY1="50.0" controlY2="50.0" endX="50.0" fill="WHITE" layoutX="231.0" layoutY="79.0" startX="100.0" stroke="BLACK" />
+   </children>
+</Pane>

@@ -124,6 +124,10 @@ public class HomeTask extends Task {
                                 client.getOut().println(""+homeApp.getUser().getSoldi());
                                 System.out.println("Sent money");
                                 break;
+                            case("END"):
+                                System.out.println("NEL CASE");
+                                homeApp.showEndPopup();
+                                break;
                         }
                     } else {
                         //active = false;

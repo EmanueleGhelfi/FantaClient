@@ -106,15 +106,13 @@
 }
 */
 
-/*
+
 .ButtonRosa{
     -fx-background-image: url("/Images/home.png");
     -fx-background-repeat: no-repeat;
     -fx-background-position: right;
     -fx-background-size: contain;
 }
-*/
-
 
 .ButtonMercato{
     -fx-background-image: url("/Images/mercato.png");
@@ -124,6 +122,7 @@
 }
 
 .ButtonAndamento{
+    /**-fx-background-image: url("/Images/profile.png");*/
     -fx-background-image: url("/Images/profile.png");
     -fx-background-repeat: no-repeat;
     -fx-background-position: right;
