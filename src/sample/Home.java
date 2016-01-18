@@ -732,7 +732,7 @@ public void goToRosa() {
                     //ndGameController.initView();
                     //Parent root = loader.load(getClass().getResource("sample.fxml"));
                     secondaryStage.setTitle("Hello World");
-                    Scene scene = new Scene(root, 500, 500);
+                    Scene scene = new Scene(root, 600, 400);
                     scene.getStylesheets().add(getClass().getResource("/CSS/registercss1.css").toExternalForm());
                     secondaryStage.setScene(scene);
                     //Handle click on x
