@@ -15,7 +15,7 @@ public class EndGameController extends BaseController {
     @FXML private StackPane stackPane;
 
     public void startAnimation() {
-        Path path = new Path();
+       /* Path path = new Path();
         path.getElements().add(new MoveTo(114, 27));
         path.getElements().add(new CubicCurveTo(25.00,-50.00,75.00,-50.00,100.00,0.00));
         path.getElements().add(new CubicCurveTo(75.00,50.00,50.00,50.00,50.00,0.00));
@@ -28,6 +28,7 @@ public class EndGameController extends BaseController {
         pathTransition.setCycleCount(1);
         pathTransition.setAutoReverse(true);
         pathTransition.play();
+        */
 
         stackPane.setScaleX(0);
         stackPane.setScaleY(0);
@@ -36,7 +37,7 @@ public class EndGameController extends BaseController {
                 new ScaleTransition(Duration.millis(4000), stackPane);
         scaleTransition.setCycleCount(1);
         scaleTransition
-                .setInterpolator(Interpolator.EASE_BOTH);
+                .setInterpolator(Interpolator.EASE_OUT);
         scaleTransition.setFromX(0);
         scaleTransition.setFromY(0);
         scaleTransition.setToX(1);
