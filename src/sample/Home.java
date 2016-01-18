@@ -706,7 +706,7 @@ public void goToRosa() {
         needToConnect=false;
     }
 
-    public void showEndPopup() {
+    public void showEndPopup(String pos) {
         Home home = this;
         Platform.runLater(new Runnable() {
             @Override
@@ -729,6 +729,7 @@ public void goToRosa() {
 
                     endGameController = loader.getController();
                     endGameController.setHome(home);
+                    endGameController.setPos(pos);
                     //ndGameController.initView();
                     //Parent root = loader.load(getClass().getResource("sample.fxml"));
                     secondaryStage.setTitle("Hello World");

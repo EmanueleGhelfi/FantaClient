@@ -11,7 +11,7 @@
       <StackPane fx:id="stackPane" layoutX="256.0" layoutY="101.0" prefHeight="88.0" prefWidth="88.0">
          <children>
             <Circle fill="#ff624a" radius="44.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="1°" textAlignment="CENTER" wrappingWidth="29.9921875">
+            <Text fx:id="posText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="1°" textAlignment="CENTER" wrappingWidth="29.9921875">
                <font>
                   <Font size="24.0" />
                </font>
@@ -23,6 +23,6 @@
             <Image url="@../Images/podium.png" />
          </image>
       </ImageView>
-      <Text layoutX="227.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Il Campionato è finito!!! Complimenti, ti sei classificato:" wrappingWidth="162.13671875" />
+      <Text layoutX="219.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Il Campionato è finito!!! Complimenti, ti sei classificato:" wrappingWidth="162.13671875" />
    </children>
 </Pane>

@@ -4,6 +4,7 @@ import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.*;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 import sample.Home;
 
@@ -13,15 +14,18 @@ import sample.Home;
 public class EndGameController extends BaseController {
    @FXML private CubicCurve curve;
     @FXML private StackPane stackPane;
+    @FXML private Text posText;
+
 
     public void startAnimation() {
         Path path = new Path();
-        path.getElements().add(new MoveTo(00.00, 00.00));
-        //path.getElements().add(new CubicCurveTo(25.00,-50.00,75.00,-50.00,100.00,0.00));
+        path.getElements().add(new MoveTo(0.00, 0.00));
+        path.getElements().add(new CubicCurveTo(25.00,-50.00,75.00,-50.00,100.00,0.00));
         //path.getElements().add(new CubicCurveTo(75.00,50.00,50.00,50.00,50.00,0.00));
-        // path.getElements().add(new CubicCurveTo(0, 120, 0, 240, 380, 240));
+        path.getElements().add(new CubicCurveTo(75.00,50.00,50.00,50.00,40.00,0.00));
+        //path.getElements().add(new CubicCurveTo(0, 120, 0, 240, 380, 240));
 
-        path.getElements().add(new LineTo(400.00-stackPane.getLayoutX(),360.00-stackPane.getLayoutY()));
+        //path.getElements().add(new LineTo(400.00-stackPane.getLayoutX(),360.00-stackPane.getLayoutY()));
         PathTransition pathTransition = new PathTransition();
         pathTransition.setDuration(Duration.millis(4000));
         pathTransition.setPath(path);
@@ -39,7 +43,7 @@ public class EndGameController extends BaseController {
                 new ScaleTransition(Duration.millis(6000), stackPane);
         scaleTransition.setCycleCount(1);
         scaleTransition
-                .setInterpolator(Interpolator.EASE_OUT);
+                .setInterpolator(Interpolator.EASE_IN);
         scaleTransition.setFromX(0);
         scaleTransition.setFromY(0);
         scaleTransition.setToX(1);
@@ -49,4 +53,7 @@ public class EndGameController extends BaseController {
     }
 
 
+    public void setPos(String pos) {
+        posText.setText(""+pos+"°");
+    }
 }

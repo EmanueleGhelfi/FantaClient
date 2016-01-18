@@ -298,7 +298,7 @@ public class HomeController extends BaseController{
 
         initToolbar();
 
-        getHome().showEndPopup();
+        //getHome().showEndPopup();
 
 
     }

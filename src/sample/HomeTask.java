@@ -126,7 +126,8 @@ public class HomeTask extends Task {
                                 break;
                             case("END"):
                                 System.out.println("NEL CASE");
-                                homeApp.showEndPopup();
+                                //
+                                ReceiveEndPos();
                                 break;
                         }
                     } else {
@@ -146,6 +147,19 @@ public class HomeTask extends Task {
             }
 
         return res;
+    }
+
+    private void ReceiveEndPos() {
+        client.getOut().println("GETENDPOS");
+        try {
+            String pos = client.getIn().readLine();
+            homeApp.showEndPopup(pos);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     private void DismissDialog() {
