@@ -347,6 +347,7 @@ public class HomeTask extends Task {
 
     private void GetVotesFromServer() {
         client.getOut().println(""+homeApp.getDayToAsk());
+        System.out.println("DAY TO ASK "+homeApp.getDayToAsk());
         String voti = null;
         try {
             voti = client.getIn().readLine();

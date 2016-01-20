@@ -254,7 +254,7 @@ public class AndamentoController extends BaseController {
         series.setName("Andamento");
 
         //It tells if main have to ask server for results
-        needToDownloadResult=false;
+        this.needToDownloadResult=false;
 
         // Look for some error in results, sometimes there aren't some day
         for (int i = 0;i<38;i++){

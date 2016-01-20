@@ -163,9 +163,11 @@ public class ClassificaController extends BaseController {
             cbGiornate.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
                 @Override
                 public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                    System.out.println("" + observable.getValue().intValue());
-                    getHome().askForVoti((Integer) giornate.get(observable.getValue().intValue()));
-                    labelVoti.setText("Analisi Prestazionale per la giornata " + (Integer) giornate.get(observable.getValue().intValue()));
+                    System.out.println("Numero in changed" + observable.getValue().intValue());
+                    if(observable.getValue().intValue()>=0) {
+                        getHome().askForVoti((Integer) giornate.get(observable.getValue().intValue()));
+                        labelVoti.setText("Analisi Prestazionale per la giornata " + (Integer) giornate.get(observable.getValue().intValue()));
+                    }
                 }
             });
 
