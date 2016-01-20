@@ -202,11 +202,17 @@ public class Second extends Application {
 
 
     public void ShowError() {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Attenzione!");
-        alert.setHeaderText("Impossibile registrarsi!");
-        alert.setContentText("Lo Username potrebbe essere già presente, cambia Username e riprova");
-        alert.showAndWait();
-        controller.ShowError();
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Attenzione!");
+                alert.setHeaderText("Impossibile registrarsi!");
+                alert.setContentText("Lo Username potrebbe essere già presente, cambia Username e riprova");
+                alert.showAndWait();
+                controller.ShowError();
+            }
+        });
+
     }
 }

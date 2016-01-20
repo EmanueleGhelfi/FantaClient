@@ -385,7 +385,7 @@ public class RegisterController extends BaseController {
 
         }
 
-        if(item.getCosto()<money && allow){
+        if(item.getCosto()<=money && allow){
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Attenzione");
             alert.setHeaderText("Vuoi davvero comprare "+item.getCognome()+" per "+item.getCosto()+" fantamilioni?");

@@ -12,7 +12,7 @@
 
 <TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RegisterController">
    <tabs>
-      <Tab text="Profile">
+      <Tab closable="false" text="Profile">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -52,7 +52,7 @@
             </AnchorPane>
         </content>
       </Tab>
-      <Tab text="Team">
+      <Tab closable="false" text="Team">
         <content>
             <ScrollPane prefHeight="738.0" prefViewportHeight="671.0" prefViewportWidth="1000.0" prefWidth="1000.0" style="-fx-background-color: white;">
                <content>

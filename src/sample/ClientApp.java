@@ -159,8 +159,9 @@ public class ClientApp extends Application {
             public void run() {
                 Second app2 = new Second(client);
                 try {
-                    app2.start(primaryStage);
+                    app2.start(new Stage());
                     active=false;
+                    primaryStage.close();
                     //Platform.exit();
                 } catch (Exception e) {
                     e.printStackTrace();
