@@ -2,6 +2,7 @@ package sample;
 
 import Constants.Communication;
 import Model.*;
+import Utils.CommunicationUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import javafx.concurrent.Task;
@@ -43,47 +44,59 @@ public class HomeTask extends Task {
         }.getType();
 
         if(homeApp.getTeam()==null)
-            GetTeamFromServer();
+            //GetTeamFromServer();
+            CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.GETTEAM,"");
         if(homeApp.getUser()==null)
-            GetUserFromServer();
+           // GetUserFromServer();
+            CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.GETUSER,"");
 
             while (active) {
                 try {
                     if ((ob = reader.readLine()) != null) {
                         System.out.println(ob);
                         Gson gson = new Gson();
-                        switch (ob) {
-                            case (Communication.READYFORTIT):
+                        CommunicationInfo communicationInfo = gson.fromJson(ob,CommunicationInfo.class);
+                        switch (communicationInfo.getCode()) {
+                            /*case (Communication.READYFORTIT):
                                 ArrayList<Player> formazione = homeApp.getFormazione();
                                 Gson gson2 = new Gson();
                                 client.getOut().println(gson2.toJson(formazione));
                                 break;
-                            case (Communication.READYFORRIS):
+                                */
+                           /* case (Communication.READYFORRIS):
                                 SendBench();
                                 break;
+                                */
+                            case (Communication.READYFORTEAM):
+                                GetTeamFromServer(communicationInfo.getInfo());
+                                break;
+                            case(Communication.READYFORUSER):
+                                GetUserFromServer(communicationInfo.getInfo());
+                                break;
                             case (Communication.READYFORCLASSIFICA):
-                                GetClassificaFromServer();
+                                GetClassificaFromServer(communicationInfo.getInfo());
                                 break;
                             case (Communication.READYFORALLPLAYERS):
-                                GetAllPlayersFromServer();
+                                GetAllPlayersFromServer(communicationInfo.getInfo());
                                 break;
-                            case (Communication.READYFORMODIFIEDTEAM):
+                            /*case (Communication.READYFORMODIFIEDTEAM):
                                 SendModifiedTeamToServer();
                                 break;
+                                */
                             case (Communication.READYFORVOTI):
-                                GetVotesFromServer();
+                                GetVotesFromServer(communicationInfo.getInfo());
                                 break;
                             case (Communication.READYFORGIORNATE):
-                                GetGiornateFromServer();
+                                GetGiornateFromServer(communicationInfo.getInfo());
                                 break;
                             case (Communication.READYFORLASTDAY):
-                                GetLastDayFromServer();
+                                GetLastDayFromServer(communicationInfo.getInfo());
                                 break;
                             case (Communication.READYFORIMAGE):
                                 GetImageFromServer();
                                 break;
                             case (Communication.READYFORRESULTS):
-                                GetResultsFromServer();
+                                GetResultsFromServer(communicationInfo.getInfo());
                                 break;
                             case (Communication.NOIMAGE):
                                 AskResultToServer();
@@ -91,14 +104,15 @@ public class HomeTask extends Task {
                             case (Communication.FILE):
                                 UploadImage();
                                 break;
-                            case (Communication.READYFORMODIFIEDUSER):
+                            /*case (Communication.READYFORMODIFIEDUSER):
                                 SendModifiedUser();
                                 break;
+                                */
                             case (Communication.USEROK):
                                 OnUserOK();
                                 break;
                             case (Communication.READYFORINFO):
-                                GetInfoFromServer();
+                                GetInfoFromServer(communicationInfo.getInfo());
                                 break;
                             case (Communication.USERNO):
                                 //TODO: manage
@@ -127,7 +141,10 @@ public class HomeTask extends Task {
                             case("END"):
                                 System.out.println("NEL CASE");
                                 //
-                                ReceiveEndPos();
+                                ReceiveEndPos(communicationInfo.getInfo());
+                                break;
+                            case("READYFORDATE"):
+                                ReceiveDateFromServer(communicationInfo.getInfo());
                                 break;
                         }
                     } else {
@@ -149,17 +166,8 @@ public class HomeTask extends Task {
         return res;
     }
 
-    private void ReceiveEndPos() {
-        client.getOut().println("GETENDPOS");
-        try {
-            String pos = client.getIn().readLine();
+    private void ReceiveEndPos(String pos) {
             homeApp.showEndPopup(pos);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
     }
 
     private void DismissDialog() {
@@ -183,15 +191,11 @@ public class HomeTask extends Task {
         homeApp.OnApprovedModifiedData();
     }
 
-    private void GetInfoFromServer() {
-        try {
-            String stringInfo = client.getIn().readLine();
+    private void GetInfoFromServer(String stringInfo) {
+            //String stringInfo = client.getIn().readLine();
             Gson gson = new Gson();
             InfoClass info = gson.fromJson(stringInfo,InfoClass.class);
             homeApp.setInfo(info);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
 
     }
@@ -242,24 +246,20 @@ public class HomeTask extends Task {
         client.getOut().println(Communication.GETRESULTS);
     }
 
-    private void GetResultsFromServer() {
-        client.getOut().println(Communication.READYFORRESULTS);
+    private void GetResultsFromServer(String resultString) {
+        //client.getOut().println(Communication.READYFORRESULTS);
         //Receive results from server
-
-        try {
-            String resultString = client.getIn().readLine();
+            //String resultString = client.getIn().readLine();
             Gson gson = new Gson();
             Type resultType = new TypeToken<ArrayList<Results>>() {
             }.getType();
             ArrayList<Results> results = gson.fromJson(resultString,resultType);
-            client.getOut().println(Communication.GETINFO);
+            CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.GETINFO,"");
             homeApp.setResults(results);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     private void GetImageFromServer() {
+
         client.getOut().println(Communication.READYFORIMAGE);
         //Receive file from server
 
@@ -294,43 +294,27 @@ public class HomeTask extends Task {
         }
     }
 
-    private void GetUserFromServer() {
-        client.getOut().println(Communication.GETUSER);
-        try {
+    private void GetUserFromServer(String userString) {
             Gson gson = new Gson();
-            String userString = client.getIn().readLine();
             System.out.println(userString);
             User user = gson.fromJson(userString,User.class);
             homeApp.setUser(user);
             //Initialize all with users'info
             homeApp.initWelcome();
-
-            client.getOut().println(Communication.CANSENDTEAM);
-
-            ReceiveDateFromServer();
-
-        } catch (IOException e) {
-            e.printStackTrace();
+            //client.getOut().println(Communication.CANSENDTEAM);
+            CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.CANSENDTEAM,"");
+            //ReceiveDateFromServer();
         }
 
-    }
-
-    private void ReceiveDateFromServer() {
-        try {
-
-            String date = client.getIn().readLine();
+    private void ReceiveDateFromServer(String date) {
             System.out.println("Prossima: "+date);
             homeApp.EnableSendButton(date);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
     }
 
-    private void GetLastDayFromServer() {
-        client.getOut().println(Communication.READYFORLASTDAY);
-        try {
-            String classifica = client.getIn().readLine();
+    private void GetLastDayFromServer(String classifica) {
+        //client.getOut().println(Communication.READYFORLASTDAY);
+       // try {
+            //String classifica = client.getIn().readLine();
             System.out.println(classifica);
             Type teamType = new TypeToken<ArrayList<SimpleTeam>>() {
             }.getType();
@@ -339,27 +323,18 @@ public class HomeTask extends Task {
             homeApp.setLastDayteams(teams);
             homeApp.initLastDayList();
             //GetGiornateFromServer();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
     }
 
-    private void GetVotesFromServer() {
-        client.getOut().println(""+homeApp.getDayToAsk());
+    private void GetVotesFromServer(String voti) {
+        //client.getOut().println(""+homeApp.getDayToAsk());
         System.out.println("DAY TO ASK "+homeApp.getDayToAsk());
-        String voti = null;
-        try {
-            voti = client.getIn().readLine();
+        //String voti = null;
             System.out.println(voti);
             Type teamType = new TypeToken<ArrayList<PlayerVoto>>() {
             }.getType();
             Gson gson = new Gson();
             ArrayList votiArray = gson.fromJson(voti,teamType);
             homeApp.changeLvVoti(""+homeApp.getDayToAsk(),votiArray);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
     }
 
@@ -369,20 +344,16 @@ public class HomeTask extends Task {
         client.getOut().println(teamJson);
     }
 
-    private void GetAllPlayersFromServer() {
-        client.getOut().println(Communication.READYFORALLPLAYERS);
-        try {
-            String players = client.getIn().readLine();
+    private void GetAllPlayersFromServer(String info) {
+        //client.getOut().println(Communication.READYFORALLPLAYERS);
             //System.out.println();
             Type playerType = new TypeToken<ArrayList<Player>>(){}.getType();
             Gson gson = new Gson();
-            ArrayList allPlayers = gson.fromJson(players,playerType);
+            ArrayList allPlayers = gson.fromJson(info,playerType);
             PopulateArrays(allPlayers);
             homeApp.initTableMercato();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-    }
+
 
     private void PopulateArrays(ArrayList<Player> allplayers) {
         ArrayList<Player> goalKeepers = new ArrayList<>();
@@ -414,34 +385,26 @@ public class HomeTask extends Task {
         homeApp.setStrikers(strikers);
     }
 
-    private void GetClassificaFromServer() {
-        client.getOut().println(Communication.READYFORCLASSIFICA);
-        try {
-            String classifica = client.getIn().readLine();
-            System.out.println(classifica);
+    private void GetClassificaFromServer(String info) {
+        //client.getOut().println(Communication.READYFORCLASSIFICA);
+            //String classifica = client.getIn().readLine();
+            System.out.println(info);
             Type teamType = new TypeToken<ArrayList<SimpleTeam>>() {
             }.getType();
             Gson gson = new Gson();
-            ArrayList teams = gson.fromJson(classifica,teamType);
+            ArrayList teams = gson.fromJson(info,teamType);
             homeApp.setTeams(teams);
             homeApp.initClassifica();
             //GetGiornateFromServer();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
-    private void GetGiornateFromServer() {
-        client.getOut().println(Communication.READYFORGIORNATE);
-        try {
-            String giornate = client.getIn().readLine();
+    private void GetGiornateFromServer(String giornate) {
+        //client.getOut().println(Communication.READYFORGIORNATE);
+            //String giornate = client.getIn().readLine();
             int giornateInt = Integer.parseInt(giornate);
             homeApp.InitComboBoxVoti(giornateInt);
             homeApp.setDayToAsk(giornateInt);
             //AskVotesToServer();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     private void AskVotesToServer() {
@@ -465,20 +428,14 @@ public class HomeTask extends Task {
         */
     }
 
-    private void GetTeamFromServer() {
+    private void GetTeamFromServer(String teamString) {
         System.out.println("Sono Home Task: GETTEAM");
-        client.getOut().println(Communication.GETTEAM);
-        try {
             Gson gson = new Gson();
-            String teamString = client.getIn().readLine();
             System.out.println(teamString);
             ArrayList<Player> team = gson.fromJson(teamString,listType);
             homeApp.setTeam(team);
             homeApp.initTable();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-    }
 
 
 }

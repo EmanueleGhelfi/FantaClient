@@ -55,4 +55,6 @@ public class Communication {
     public static final String SENDTEAM = "SENDTEAM";
 
 
+    public static final String READYFORTEAM = "READYFORTEAM";
+    public static final String READYFORUSER = "READYFORUSER";
 }

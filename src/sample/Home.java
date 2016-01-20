@@ -5,6 +5,8 @@ package sample;/**
 import Constants.Communication;
 import Controllers.*;
 import Model.*;
+import Utils.CommunicationUtils;
+import com.google.gson.Gson;
 import com.guigarage.flatterfx.FlatterFX;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -383,12 +385,19 @@ public class Home extends Application {
         this.bench = bench;
         System.out.println(bench);
         System.out.println(formazione);
-        client.getOut().println(Communication.SENDTITOLARI);
+        //client.getOut().println(Communication.SENDTITOLARI);
+        Gson gson = new Gson();
+        TeamClass teamClass = new TeamClass(formazione,bench);
+        String info = gson.toJson(teamClass);
+        CommunicationInfo communicationInfo = new CommunicationInfo(Communication.SENDTITOLARI,info);
+        String toSend = gson.toJson(communicationInfo);
+        client.getOut().println(toSend);
     }
 
     /************************************* CHIEDO CLASSIFICA AL SERVER ***********************************************************************///
     public void askForClassifica() {
-        client.getOut().println(Communication.GETCLASSIFICA);
+        //client.getOut().println(Communication.GETCLASSIFICA);
+        CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.GETCLASSIFICA,"");
     }
 
 
@@ -396,12 +405,12 @@ public class Home extends Application {
     public void initClassifica() {
         classificaController.setTeams(teams);
         classificaController.CallInitClassifica();
-        //client.getOut().println("GETGIORNATE");
-        client.getOut().println(Communication.GETLASTDAY);
+        //client.getOut().println(Communication.GETLASTDAY);
+        CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.GETLASTDAY,"");
     }
 
 
-public void goToRosa() {
+    public void goToRosa() {
     mainContainer.setScreen(ROSA);
     controller.initWelcomeText();
 
@@ -420,7 +429,8 @@ public void goToRosa() {
     }
 
     public void getAllPlayers() {
-        client.getOut().println(Communication.GETALLPLAYERS);
+        //client.getOut().println(Communication.GETALLPLAYERS);
+        CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.GETALLPLAYERS,"");
     }
 
     public void initTableMercato() {
@@ -433,7 +443,12 @@ public void goToRosa() {
 
     // Invia il team al server dopo aver modificato la formazione
     public void sendModifiedTeamToServer() {
-        client.getOut().println(Communication.SENDMODIFIEDTEAM);
+        //client.getOut().println(Communication.SENDMODIFIEDTEAM);
+
+        TeamMercato teamMercato = new TeamMercato(team,user.getSoldi());
+        Gson gson = new Gson();
+        String teamString = gson.toJson(teamMercato);
+        CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.SENDMODIFIEDTEAM,teamString);
         controller.initTable(team);
         controller.clearAll();
         controller.clearPlayer();
@@ -454,14 +469,15 @@ public void goToRosa() {
 
     public void askForVoti(int value) {
         this.dayToAsk=value;
-        client.getOut().println(Communication.GETVOTI);
+        //client.getOut().println(Communication.GETVOTI);
+        CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.GETVOTI,""+this.dayToAsk);
     }
 
     public void initLastDayList() {
         classificaController.setLastDayTeams(lastDayteams);
         classificaController.CallInitLastDayList();
-        client.getOut().println(Communication.GETGIORNATE);
-
+       // client.getOut().println(Communication.GETGIORNATE);
+        CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.GETGIORNATE,"");
     }
 
     public void setUser(User user) {
@@ -482,7 +498,8 @@ public void goToRosa() {
     }
 
     public void downloadProfileImage() {
-        client.getOut().println(Communication.GETIMAGE);
+        //client.getOut().println(Communication.GETIMAGE);
+        CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.GETIMAGE,"");
     }
 
     public void setProfileImage(File profileImage) {
@@ -496,7 +513,7 @@ public void goToRosa() {
 
         if(andamentoController.isNeedToDownloadResult()){
             //Ask for results to insert into xychart
-            client.getOut().println(Communication.GETRESULTS);
+            CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.GETRESULTS,"");
         }
 
     }
@@ -515,14 +532,19 @@ public void goToRosa() {
     }
 
     public void uploadPhoto() {
-        client.getOut().println(Communication.SENDFILE);
+        //client.getOut().println(Communication.SENDFILE);
+        CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.SENDFILE,"");
     }
 
 
 
     public void SendModifiedDataToServer(User user) {
         this.userTemp = user;
-        client.getOut().println(Communication.SENDMODIFIEDUSER);
+        Gson gson = new Gson();
+        String userString = gson.toJson(userTemp);
+        //client.getOut().println(Communication.SENDMODIFIEDUSER);
+        CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.SENDMODIFIEDUSER,userString);
+
     }
 
     public void OnApprovedModifiedData() {
@@ -672,11 +694,15 @@ public void goToRosa() {
 
                     if (client.init()){
                         needToConnect=false;
-                        client.getOut().println(Communication.Auth);
+                        //client.getOut().println(Communication.Auth);
+                        userToSend = new SimpleUser(pw, user);
+                        Gson gson = new Gson();
+                        String userString = gson.toJson(userToSend);
+                        CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.Auth,userString);
                         HomeTask task = new HomeTask(home, client);
                         Thread thread = new Thread(task);
                         thread.start();
-                        userToSend = new SimpleUser(pw, user);
+
                     }
                     else {
                         Platform.runLater(new Runnable() {
@@ -696,7 +722,9 @@ public void goToRosa() {
         }
         else {
             userToSend = new SimpleUser(pw, user);
-            client.getOut().println(Communication.Auth);
+            Gson gson = new Gson();
+            String userString = gson.toJson(userToSend);
+            CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.Auth,userString);
         }
 
     }
@@ -732,7 +760,7 @@ public void goToRosa() {
                     endGameController.setPos(pos);
                     //ndGameController.initView();
                     //Parent root = loader.load(getClass().getResource("sample.fxml"));
-                    secondaryStage.setTitle("Hello World");
+                    secondaryStage.setTitle("FINISH!");
                     Scene scene = new Scene(root, 600, 400);
                     scene.getStylesheets().add(getClass().getResource("/CSS/registercss1.css").toExternalForm());
                     secondaryStage.setScene(scene);

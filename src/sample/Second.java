@@ -8,6 +8,7 @@ import Controllers.RegisterController;
 import Model.ClientClass;
 import Model.Player;
 import Model.User;
+import Utils.CommunicationUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import javafx.application.Application;
@@ -139,7 +140,10 @@ public class Second extends Application {
         this.newUser = newUser;
         //this.newUser.setSoldi(money);
         this.selectedFile=file;
-        client.getOut().println(Communication.SENDTEAM);
+        //client.getOut().println(Communication.SENDTEAM);
+        Gson gson = new Gson();
+        String newUserString = gson.toJson(newUser);
+        CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.SENDTEAM,newUserString);
         //client.getOut().println("SENDFILE");
 
     }

@@ -2,8 +2,11 @@ package sample;
 
 import Constants.Communication;
 import Controllers.RegisterController;
+import Model.AllPlayer;
 import Model.ClientClass;
+import Model.CommunicationInfo;
 import Model.Player;
+import Utils.CommunicationUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import javafx.application.Platform;
@@ -35,16 +38,14 @@ public class RegisterTask extends Task {
         boolean active = true;
         String ob = null;
         Gson gson = new Gson();
-        GetPlayersFromServer();
+        //GetPlayersFromServer();
+        //out.println(Communication.GETDATA);
+        CommunicationUtils.SendCommunicationInfo(out,Communication.GETDATA,"");
         while (active){
             if ((ob = in.readLine()) != null){
                 System.out.println("Sono register task, ho ricevuto: "+ob);
-                switch (ob){
-                    case (Communication.READY):
-                        String userJson = gson.toJson(clientApp.getNewUser());
-                        out.println(userJson);
-                        System.out.println(userJson);
-                        break;
+                CommunicationInfo communicationInfo = gson.fromJson(ob,CommunicationInfo.class);
+                switch (communicationInfo.getCode()){
                     case(Communication.FILE):
                         //TODO: SEND FILE
                         SendFile();
@@ -56,6 +57,9 @@ public class RegisterTask extends Task {
                     case (Communication.AUTHNO):
                         System.out.println("No");
                         ShowError();
+                        break;
+                    case (Communication.GETDATA):
+                        GetPlayersFromServer(communicationInfo.getInfo());
                         break;
 
 
@@ -99,43 +103,27 @@ public class RegisterTask extends Task {
         }
     }
 
-    private void GetPlayersFromServer() {
-        out.println(Communication.GETDATA);
+    private void GetPlayersFromServer(String info) {
+
         System.out.println(Communication.GETDATA);
         String por = null;
         String def = null;
         String cen = null;
         String att = null;
-        try {
-            por = in.readLine();
-            Gson gson = new Gson();
-            Type listType = new TypeToken<ArrayList<Player>>() {
-            }.getType();
-            goalkeepers = gson.fromJson(por, listType);
+        Gson gson = new Gson();
+        AllPlayer allPlayer = gson.fromJson(info,AllPlayer.class);
+            goalkeepers = allPlayer.getGoalkeeper();
             clientApp.setPor(goalkeepers);
             System.out.println("Player: " + goalkeepers);
-            out.println(Communication.OKPOR);
-            def=in.readLine();
-            defensors = gson.fromJson(def, listType);
+            defensors = allPlayer.getDefensors();
             clientApp.setDef(defensors);
             System.out.println("Player: " + defensors);
-            out.println(Communication.OKDEF);
-            cen=in.readLine();
-            midfielders = gson.fromJson(cen, listType);
+            midfielders =allPlayer.getMidfielders();
             clientApp.setCen(midfielders);
             System.out.println("Player: " + midfielders);
-            out.println(Communication.OKCEN);
-            att=in.readLine();
-            strikers = gson.fromJson(att, listType);
+            strikers = allPlayer.getStrikers();
             clientApp.setAtt(strikers);
             System.out.println("Player: " + strikers);
-            out.println(Communication.OKATT);
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
     }
 
 

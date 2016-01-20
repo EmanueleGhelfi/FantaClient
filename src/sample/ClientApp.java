@@ -3,7 +3,9 @@ package sample;
 import Constants.Communication;
 import Controllers.Controller;
 import Model.ClientClass;
+import Model.CommunicationInfo;
 import Model.SimpleUser;
+import Utils.CommunicationUtils;
 import com.google.gson.Gson;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -70,7 +72,6 @@ public class ClientApp extends Application {
                     active=false;
                     //Platform.exit();
                 } catch (Exception e) {
-                    System.out.println("EXC");
                     e.printStackTrace();
                 }
             }
@@ -98,15 +99,9 @@ public class ClientApp extends Application {
                                     if (reader.ready() && (res = reader.readLine()) != null) {
                                         //return res;
                                         //changeText(res);
-
-                                        switch (res) {
-                                            case (Communication.OK):
-                                                System.out.println("INVIO USER");
-                                                //client.getOut().println(user);
-                                                Gson gson = new Gson();
-                                                String userString = gson.toJson(new SimpleUser(pw, user));
-                                                client.getOut().println(userString);
-                                                break;
+                                        Gson gson = new Gson();
+                                        CommunicationInfo communicationInfo = gson.fromJson(res,CommunicationInfo.class);
+                                        switch (communicationInfo.getCode()) {
                                             case (Communication.AUTHOK):
                                                 System.out.println("Client Authorized...");
                                                 GoToHome();
@@ -133,7 +128,9 @@ public class ClientApp extends Application {
                     thread.start();
 
                     PrintWriter out = client.getOut();
-                    out.println(toSend);
+                    Gson gson = new Gson();
+                    String userString = gson.toJson(new SimpleUser(pw, user));
+                    CommunicationUtils.SendCommunicationInfo(out,toSend,userString);
                 }
                 else {
                     Platform.runLater(new Runnable() {
