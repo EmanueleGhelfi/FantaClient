@@ -248,4 +248,10 @@ public class ClassificaController extends BaseController {
     public void CallInitLastDayList() {
         initClassifica(lastDayTable,lastDayTeams);
     }
+
+    @Override
+    public void goToClassifica(ActionEvent actionEvent) {
+        //super.goToClassifica(actionEvent);
+        //Does nothing
+    }
 }

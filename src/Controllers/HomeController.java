@@ -2568,7 +2568,10 @@ public class HomeController extends BaseController{
         scaleTransition.playFromStart();
     }
 
-
-
+    @Override
+    public void goToRosa(Event event) {
+       // super.goToRosa(event);
+        //Does nothing
+    }
 }
 

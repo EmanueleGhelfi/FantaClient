@@ -561,4 +561,11 @@ public class AndamentoController extends BaseController {
 
 
     }
+
+
+    @Override
+    public void goToAndamento(ActionEvent actionEvent) {
+        //super.goToAndamento(actionEvent);
+        //Does nothing
+    }
 }
