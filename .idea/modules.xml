@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FXExample.iml" filepath="$PROJECT_DIR$/FXExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FantaClient.iml" filepath="$PROJECT_DIR$/FantaClient.iml" />
     </modules>
   </component>
 </project>

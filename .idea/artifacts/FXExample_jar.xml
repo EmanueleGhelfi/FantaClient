@@ -5,7 +5,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/src/provaprova/META-INF/MANIFEST.MF" />
       </element>
-      <element id="module-output" name="FXExample" />
+      <element id="module-output" name="FantaClient" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.4/gson-2.4.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/Desktop/jfoenix.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/controlsfx/controlsfx/8.40.10/controlsfx-8.40.10.jar" path-in-jar="/" />
