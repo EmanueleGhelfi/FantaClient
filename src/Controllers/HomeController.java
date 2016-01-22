@@ -1438,7 +1438,7 @@ public class HomeController extends BaseController{
                             int last =  imageArray.get(i).getImage().impl_getUrl().lastIndexOf('.');
                             String exactTeam = imageArray.get(i).getImage().impl_getUrl().substring(first+1,last);
                             if(textArray.get(i).getText().equals(player.getCognome())&& exactTeam.equals(player.getSquadra())){
-                                textArray.get(i).setText("TIT");
+                                textArray.get(i).setText(imageArray.get(i).getId());
                                 imageArray.get(i).setImage(new Image("/Images/spacer.gif"));
                                 players.remove(player);
                             }

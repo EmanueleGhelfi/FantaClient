@@ -15,34 +15,34 @@
     <center>
       <AnchorPane id="field" prefHeight="685.0" prefWidth="746.0">
          <children>
-                <ImageView fx:id="imageAtt2" fitHeight="40.0" fitWidth="35.0" layoutX="183.0" layoutY="400.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView id="Att2" fx:id="imageAtt2" fitHeight="40.0" fitWidth="35.0" layoutX="183.0" layoutY="400.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
                 <Text fx:id="Att2" layoutX="189.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Att2" />
                 <Text fx:id="Dif1" layoutX="501.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Dif1" />
                 <Text fx:id="Cen3" layoutX="414.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Cen3" />
                 <Text fx:id="Att3" layoutX="189.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Att3" />
-                <ImageView fx:id="imageCen2" fitHeight="40.0" fitWidth="35.0" layoutX="410.0" layoutY="222.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
-                <ImageView fx:id="imageDif4" fitHeight="40.0" fitWidth="35.0" layoutX="494.0" layoutY="492.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
-                <ImageView fx:id="imageAtt3" fitHeight="40.0" fitWidth="35.0" layoutX="183.0" layoutY="305.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
-                <ImageView fx:id="imageDif5" fitHeight="40.0" fitWidth="35.0" layoutX="564.0" layoutY="305.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView id="Cen2" fx:id="imageCen2" fitHeight="40.0" fitWidth="35.0" layoutX="410.0" layoutY="222.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView id="Dif4" fx:id="imageDif4" fitHeight="40.0" fitWidth="35.0" layoutX="494.0" layoutY="492.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView id="Att3" fx:id="imageAtt3" fitHeight="40.0" fitWidth="35.0" layoutX="183.0" layoutY="305.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView id="Dif5" fx:id="imageDif5" fitHeight="40.0" fitWidth="35.0" layoutX="564.0" layoutY="305.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
                 <Text fx:id="Cen1" layoutX="306.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Cen1" />
-                <ImageView fx:id="imagePor" fitHeight="40.0" fitWidth="35.0" layoutX="681.0" layoutY="305.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
-                <ImageView fx:id="imageCen3" fitHeight="40.0" fitWidth="35.0" layoutX="410.0" layoutY="392.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
-                <ImageView fx:id="imageCen4" fitHeight="40.0" fitWidth="35.0" layoutX="302.0" layoutY="492.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView id="Por" fx:id="imagePor" fitHeight="40.0" fitWidth="35.0" layoutX="681.0" layoutY="305.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView id="Cen3" fx:id="imageCen3" fitHeight="40.0" fitWidth="35.0" layoutX="410.0" layoutY="392.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView id="Cen4" fx:id="imageCen4" fitHeight="40.0" fitWidth="35.0" layoutX="302.0" layoutY="492.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
                 <Text fx:id="Dif4" layoutX="501.0" layoutY="553.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Dif4" />
                 <Text fx:id="Cen5" layoutX="414.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Cen5" />
                 <Text fx:id="Por" layoutX="692.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Por" wrappingWidth="108.13671875" />
                 <Text fx:id="Cen4" layoutX="306.0" layoutY="552.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Cen4" />
                 <Text fx:id="Att1" layoutX="189.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Att1" />
-                <ImageView fx:id="imageDif3" fitHeight="40.0" fitWidth="35.0" layoutX="564.0" layoutY="392.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView id="Dif3" fx:id="imageDif3" fitHeight="40.0" fitWidth="35.0" layoutX="564.0" layoutY="392.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
                 <Text fx:id="Dif5" layoutX="571.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Dif5" />
-                <ImageView fx:id="imageAtt1" fitHeight="40.0" fitWidth="35.0" layoutX="183.0" layoutY="222.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView id="Att1" fx:id="imageAtt1" fitHeight="40.0" fitWidth="35.0" layoutX="183.0" layoutY="222.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
                 <Text fx:id="Dif3" layoutX="571.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Dif3" />
-                <ImageView fx:id="imageDif1" fitHeight="40.0" fitWidth="35.0" layoutX="494.0" layoutY="135.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView id="Dif1" fx:id="imageDif1" fitHeight="40.0" fitWidth="35.0" layoutX="494.0" layoutY="135.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
                 <Text fx:id="Cen2" layoutX="414.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Cen2" />
-                <ImageView fx:id="imageCen1" fitHeight="40.0" fitWidth="35.0" layoutX="302.0" layoutY="135.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
-                <ImageView fx:id="imageCen5" fitHeight="40.0" fitWidth="35.0" layoutX="410.0" layoutY="305.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView id="Cen1" fx:id="imageCen1" fitHeight="40.0" fitWidth="35.0" layoutX="302.0" layoutY="135.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView id="Cen5" fx:id="imageCen5" fitHeight="40.0" fitWidth="35.0" layoutX="410.0" layoutY="305.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
                 <Text fx:id="Dif2" layoutX="571.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="playername" text="Dif2" />
-                <ImageView fx:id="imageDif2" fitHeight="40.0" fitWidth="35.0" layoutX="564.0" layoutY="222.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
+                <ImageView id="Dif2" fx:id="imageDif2" fitHeight="40.0" fitWidth="35.0" layoutX="564.0" layoutY="222.0" onMouseEntered="#scaleTransition" onMouseExited="#scaleTrasitionOut" pickOnBounds="true" preserveRatio="true" styleClass="effect" />
                 <Pane prefHeight="51.0" prefWidth="796.0" style="-fx-background-color: #143153;" styleClass="homeHint">
                     <children>
                         <Text fx:id="welcomeText" fill="WHITE" layoutX="14.0" layoutY="14.0" text="Benvenuto, [nome]! Ecco la squadra [Nome Squadra]" wrappingWidth="395.0">
