@@ -301,9 +301,7 @@ public class AndamentoController extends BaseController {
     private void configureFileChooser(FileChooser fileChooser) {
         fileChooser.setTitle("Select Picture");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("All Images", "*.*"),
-                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
-                new FileChooser.ExtensionFilter("PNG", "*.png")
+                new FileChooser.ExtensionFilter("JPG", "*.jpg")
         );
     }
 

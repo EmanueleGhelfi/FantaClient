@@ -464,7 +464,13 @@ public class Home extends Application {
     }
 
     public void InitComboBoxVoti(int giornateInt) {
-        classificaController.initComboBoxVoti(giornateInt);
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                classificaController.initComboBoxVoti(giornateInt);
+            }
+        });
+
     }
 
     public void askForVoti(int value) {
