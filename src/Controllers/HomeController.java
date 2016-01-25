@@ -16,6 +16,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -572,8 +573,6 @@ public class HomeController extends BaseController{
                             PulseTransition(paneAtt);
                             PulseTransition(paneAtt2);
                             break;
-
-
                     }
                     db.setContent(content);
                     event.consume();
