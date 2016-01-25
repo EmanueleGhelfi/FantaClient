@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
 <?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -75,8 +77,7 @@
                    <content>
        <Pane prefHeight="1000.0" prefWidth="610.0">
           <children>
-              <Text layoutX="166.0" layoutY="34.0" text="Classifica Generale" textAlignment="CENTER" wrappingWidth="233.0" />
-         <TableView fx:id="classifica" layoutX="29.0" layoutY="69.0" prefHeight="448.0" prefWidth="566.0" BorderPane.alignment="CENTER">
+         <TableView fx:id="classifica" layoutX="29.0" layoutY="125.0" prefHeight="448.0" prefWidth="566.0" BorderPane.alignment="CENTER">
            <columns>
                <TableColumn prefWidth="82.0" text="Posizione" />
              <TableColumn editable="false" prefWidth="182.0" sortable="false" text="Squadra" />
@@ -90,8 +91,7 @@
                   <Insets right="20.0" top="50.0" />
                </TilePane.margin>
          </TableView>
-              <Text layoutX="786.0" layoutY="41.0" text="Ultima Giornata" textAlignment="CENTER" wrappingWidth="233.0" />
-            <TableView fx:id="lastDayTable" layoutX="618.0" layoutY="69.0" prefHeight="448.0" prefWidth="568.0" GridPane.columnIndex="1">
+            <TableView fx:id="lastDayTable" layoutX="610.0" layoutY="125.0" prefHeight="448.0" prefWidth="566.0" GridPane.columnIndex="1">
                 <columns>
                     <TableColumn prefWidth="82.0" text="Posizione" />
                     <TableColumn editable="false" prefWidth="184.0" sortable="false" text="Squadra" />
@@ -108,6 +108,26 @@
                   <Insets left="20.0" top="50.0" />
                </TilePane.margin>
             </TableView>
+                        <Label alignment="CENTER" layoutX="29.0" layoutY="75.0" prefHeight="38.0" prefWidth="566.0" style="-fx-background-color: #143153;" text="Classifica Generale" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Light" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="610.0" layoutY="75.0" prefHeight="38.0" prefWidth="566.0" style="-fx-background-color: #143153;" text="Ultima Giornata" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Light" size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXButton buttonType="RAISED" layoutX="922.0" layoutY="25.0" onAction="#resfreshList" prefHeight="31.0" prefWidth="145.0" style="-fx-background-color: white;" styleClass="buttonRefresh" text="Refresh">
+                           <ripplerFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#59b5eb" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </ripplerFill>
+                        </JFXButton>
           </children>
             </Pane>
                    </content>

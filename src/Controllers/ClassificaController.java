@@ -58,6 +58,8 @@ public class ClassificaController extends BaseController {
 
     @FXML private Button sectionMercato;
 
+    private int currentDay;
+
 
 
     /*public void SetHomeApp(Home homeapp) {
@@ -156,6 +158,7 @@ public class ClassificaController extends BaseController {
 
     public void initComboBoxVoti(int giornateInt) {
             ArrayList giornate = new ArrayList<Integer>();
+            currentDay=giornateInt;
             for (int i = giornateInt; i > 0; i--) {
                 giornate.add(i);
             }
@@ -165,8 +168,11 @@ public class ClassificaController extends BaseController {
                 public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                     System.out.println("Numero in changed" + observable.getValue().intValue());
                     if(observable.getValue().intValue()>=0) {
-                        getHome().askForVoti((Integer) giornate.get(observable.getValue().intValue()));
-                        labelVoti.setText("Analisi Prestazionale per la giornata " + (Integer) giornate.get(observable.getValue().intValue()));
+                        if((Integer) giornate.get(observable.getValue().intValue()) != currentDay) {
+                            getHome().askForVoti((Integer) giornate.get(observable.getValue().intValue()));
+                            labelVoti.setText("Analisi Prestazionale per la giornata " + (Integer) giornate.get(observable.getValue().intValue()));
+                            currentDay=(Integer) giornate.get(observable.getValue().intValue());
+                        }
                     }
                 }
             });
@@ -253,5 +259,9 @@ public class ClassificaController extends BaseController {
     public void goToClassifica(ActionEvent actionEvent) {
         //super.goToClassifica(actionEvent);
         //Does nothing
+    }
+
+    public void resfreshList(ActionEvent actionEvent) {
+        askHomeForClassifica();
     }
 }

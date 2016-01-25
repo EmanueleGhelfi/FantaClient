@@ -166,6 +166,10 @@
     -fx-text-fill: black;
 }
 
+.buttonRefresh{
+    -fx-text-fill: black;
+}
+
 /* Prova listview */
 .list-view {
     -fx-base: #C0C0C0;
