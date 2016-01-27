@@ -179,6 +179,7 @@ public class ClassificaController extends BaseController {
 
             cbGiornate.getSelectionModel().selectFirst();
             labelVoti.setText("Analisi Prestazionale per la giornata " + giornateInt);
+            getHome().askForVoti(currentDay);
     }
 
     public void changeLvVoti(String giornate, ArrayList<PlayerVoto> votiArray) {

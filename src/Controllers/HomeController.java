@@ -584,21 +584,6 @@ public class HomeController extends BaseController{
             @Override
             public void handle(DragEvent event) {
                 //Data is dragged over the target
-                /*
-                Dragboard db = event.getDragboard();
-                if(event.getDragboard().hasString()){
-                    Player player;
-                    Gson gson = new Gson();
-                    player = gson.fromJson(event.getDragboard().getString(),Player.class);
-                    if(player.getRuolo()=='P'){
-                        // Por.setText(player.getCognome());
-                        System.out.println(player.getCognome());
-                        event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
-                    }
-                    event.consume();
-                }
-            }
-            */
                 OnDragOver(event, 'P');
             }
         });
@@ -2569,7 +2554,6 @@ public class HomeController extends BaseController{
 
     @Override
     public void goToRosa(Event event) {
-       // super.goToRosa(event);
         //Does nothing
     }
 }

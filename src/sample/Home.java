@@ -156,7 +156,7 @@ public class Home extends Application {
              //controller = loader.getController();
             controller.setHome(this);
             controller.initView();
-            //Parent root = loader.load(getClass().getResource("sample.fxml"));
+            //Parent root = loader.load(getClass().getResource("clientApp.fxml"));
 
             /*primaryStage.setTitle("Hello World");
             primaryStage.setScene(new Scene(root, 950, 478));
@@ -387,7 +387,7 @@ public class Home extends Application {
         System.out.println(formazione);
         //client.getOut().println(Communication.SENDTITOLARI);
         Gson gson = new Gson();
-        TeamClass teamClass = new TeamClass(formazione,bench);
+        TeamClass teamClass = new TeamClass(bench,formazione);
         String info = gson.toJson(teamClass);
         CommunicationInfo communicationInfo = new CommunicationInfo(Communication.SENDTITOLARI,info);
         String toSend = gson.toJson(communicationInfo);
@@ -765,7 +765,7 @@ public class Home extends Application {
                     endGameController.setHome(home);
                     endGameController.setPos(pos);
                     //ndGameController.initView();
-                    //Parent root = loader.load(getClass().getResource("sample.fxml"));
+                    //Parent root = loader.load(getClass().getResource("clientApp.fxml"));
                     secondaryStage.setTitle("FINISH!");
                     Scene scene = new Scene(root, 600, 400);
                     scene.getStylesheets().add(getClass().getResource("/CSS/registercss1.css").toExternalForm());

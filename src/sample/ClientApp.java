@@ -39,26 +39,23 @@ public class ClientApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         this.primaryStage = primaryStage;
+        //Instatiate FXML loader
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/FXML/sample.fxml"));
+        //Set FXML
+        loader.setLocation(getClass().getResource("/FXML/clientApp.fxml"));
         Parent root = loader.load();
-
-        // Show the scene containing the root layout.
-        //Scene scene = new Scene(rootLayout);
-        //primaryStage.setScene(scene);
-
-        // Give the controller access to the main app.
-        //RootLayoutController controller = loader.getController();
-        //controller.setMainApp(this);
-        //Parent root = loader.load(getClass().getResource("sample.fxml"));
+        //Set icoon
         primaryStage.getIcons().add(new Image("/Images/icon.png"));
-        primaryStage.setTitle("Hello World");
+        //Set Title
+        primaryStage.setTitle("Manu's FantaClient");
+        //Set Scene
         primaryStage.setScene(new Scene(root, 500, 500));
+        //Give the controller reference to the main app
         controller = loader.getController();
+        //Give the main app reference to the controller
         controller.setMainApp(this);
+        //Show the stage
         primaryStage.show();
-
-
     }
 
     private void GoToHome() {

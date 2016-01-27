@@ -87,7 +87,7 @@ public class Second extends Application {
         controller = loader.getController();
         controller.setMainApp(this);
         controller.initView();
-        //Parent root = loader.load(getClass().getResource("sample.fxml"));
+        //Parent root = loader.load(getClass().getResource("clientApp.fxml"));
         primaryStage.setTitle("Hello World");
         Scene scene = new Scene(root,1300,1600);
         scene.getStylesheets().add(getClass().getResource("/CSS/registercss1.css").toExternalForm());
