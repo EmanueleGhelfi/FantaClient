@@ -37,36 +37,25 @@ public class HomeTask extends Task {
         String ob;
         String res=null;
         boolean active = true;
-        //BufferedReader reader = client.getIn();
         BufferedReader reader = client.getIn();
-        System.out.println("CIAO, Eccomi");
         listType = new TypeToken<ArrayList<Player>>() {
         }.getType();
 
         if(homeApp.getTeam()==null)
-            //GetTeamFromServer();
             CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.GETTEAM,"");
         if(homeApp.getUser()==null)
-           // GetUserFromServer();
             CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.GETUSER,"");
 
             while (active) {
                 try {
+                    //Legge dal buffer
                     if ((ob = reader.readLine()) != null) {
                         System.out.println(ob);
                         Gson gson = new Gson();
+                        //Deserializzo in oggetto di tipo CommunicationInfo
                         CommunicationInfo communicationInfo = gson.fromJson(ob,CommunicationInfo.class);
+                        //Funzioni diverse in base alla richiesta
                         switch (communicationInfo.getCode()) {
-                            /*case (Communication.READYFORTIT):
-                                ArrayList<Player> formazione = homeApp.getFormazione();
-                                Gson gson2 = new Gson();
-                                client.getOut().println(gson2.toJson(formazione));
-                                break;
-                                */
-                           /* case (Communication.READYFORRIS):
-                                SendBench();
-                                break;
-                                */
                             case (Communication.READYFORTEAM):
                                 GetTeamFromServer(communicationInfo.getInfo());
                                 break;
@@ -79,10 +68,6 @@ public class HomeTask extends Task {
                             case (Communication.READYFORALLPLAYERS):
                                 GetAllPlayersFromServer(communicationInfo.getInfo());
                                 break;
-                            /*case (Communication.READYFORMODIFIEDTEAM):
-                                SendModifiedTeamToServer();
-                                break;
-                                */
                             case (Communication.READYFORVOTI):
                                 GetVotesFromServer(communicationInfo.getInfo());
                                 break;
@@ -104,10 +89,6 @@ public class HomeTask extends Task {
                             case (Communication.FILE):
                                 UploadImage();
                                 break;
-                            /*case (Communication.READYFORMODIFIEDUSER):
-                                SendModifiedUser();
-                                break;
-                                */
                             case (Communication.USEROK):
                                 OnUserOK();
                                 break;
@@ -126,7 +107,6 @@ public class HomeTask extends Task {
                                 break;
                             case (Communication.AUTHOK):
                                 DismissDialog();
-                                //controller.setOutput("AUTHOK");
                                 break;
                             case (Communication.AUTHNO):
                                 //SIGNAL ERROR
@@ -140,7 +120,6 @@ public class HomeTask extends Task {
                                 break;
                             case("END"):
                                 System.out.println("NEL CASE");
-                                //
                                 ReceiveEndPos(communicationInfo.getInfo());
                                 break;
                             case("READYFORDATE"):
@@ -148,7 +127,6 @@ public class HomeTask extends Task {
                                 break;
                         }
                     } else {
-                        //active = false;
                         homeApp.setNeedToConnect(true);
                         System.out.println("SERVER OFF");
                         active=false;

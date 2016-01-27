@@ -20,21 +20,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class ClientApp extends Application {
+public class ClientMain extends Application {
     private ClientClass client;
     private Controller controller;
     private String user;
     private String pw;
     private Stage primaryStage;
     private boolean active = true;
-
-    @Override
-    public void init() throws Exception {
-        //
-        /*
-        */
-        super.init();
-    }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -49,7 +41,9 @@ public class ClientApp extends Application {
         //Set Title
         primaryStage.setTitle("Manu's FantaClient");
         //Set Scene
-        primaryStage.setScene(new Scene(root, 500, 500));
+        primaryStage.setScene(new Scene(root, 600, 400));
+        //Avoid resize
+        primaryStage.setResizable(false);
         //Give the controller reference to the main app
         controller = loader.getController();
         //Give the main app reference to the controller
@@ -154,7 +148,7 @@ public class ClientApp extends Application {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                Second app2 = new Second(client);
+                RegisterMain app2 = new RegisterMain(client);
                 try {
                     app2.start(new Stage());
                     active=false;

@@ -29,7 +29,7 @@ import java.io.PrintWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class Second extends Application {
+public class RegisterMain extends Application {
 
     private ClientClass client;
     private ArrayList<Player> goalkeepers;
@@ -52,7 +52,7 @@ public class Second extends Application {
     }
 
 
-    public Second(ClientClass client) {
+    public RegisterMain(ClientClass client) {
         this.client = client;
         this.money = 250;
         this.active=true;
@@ -89,7 +89,7 @@ public class Second extends Application {
         controller.initView();
         //Parent root = loader.load(getClass().getResource("clientApp.fxml"));
         primaryStage.setTitle("Hello World");
-        Scene scene = new Scene(root,1300,1600);
+        Scene scene = new Scene(root,1200,1000);
         scene.getStylesheets().add(getClass().getResource("/CSS/registercss1.css").toExternalForm());
         primaryStage.setScene(scene);
         //Handle click on x

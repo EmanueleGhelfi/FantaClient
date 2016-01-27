@@ -17,7 +17,7 @@ import javafx.scene.text.Text;
 import javafx.util.Callback;
 import GraphicItem.ButtonCell;
 import Model.Player;
-import sample.Second;
+import sample.RegisterMain;
 import Model.User;
 
 import java.io.IOException;
@@ -26,7 +26,7 @@ import java.util.Comparator;
 
 public class ControllerSecond extends BaseController {
 
-    private Second clientApp;
+    private RegisterMain clientApp;
     @FXML private TableView por;
     @FXML private TableView dif;
     @FXML private TableView cen;
@@ -105,7 +105,7 @@ public class ControllerSecond extends BaseController {
      *
      * @param clientApp
      */
-    public void setMainApp(Second clientApp) {
+    public void setMainApp(RegisterMain clientApp) {
         this.clientApp = clientApp;
     }
 

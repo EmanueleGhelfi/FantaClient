@@ -1,22 +1,17 @@
 package sample;
 
 import Constants.Communication;
-import Controllers.RegisterController;
 import Model.AllPlayer;
 import Model.ClientClass;
 import Model.CommunicationInfo;
 import Model.Player;
 import Utils.CommunicationUtils;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import javafx.application.Platform;
 import javafx.concurrent.Task;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.lang.reflect.Type;
-import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
 /**
@@ -24,7 +19,7 @@ import java.util.ArrayList;
  */
 public class RegisterTask extends Task {
 
-    private Second clientApp;
+    private RegisterMain clientApp;
     private PrintWriter out;
     private BufferedReader in;
     private ClientClass client;
@@ -127,7 +122,7 @@ public class RegisterTask extends Task {
     }
 
 
-    public RegisterTask(Second clientApp, PrintWriter out, BufferedReader in, ClientClass client){
+    public RegisterTask(RegisterMain clientApp, PrintWriter out, BufferedReader in, ClientClass client){
         this.clientApp = clientApp;
         this.out=out;
         this.in = in;

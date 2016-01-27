@@ -7,11 +7,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import javafx.fxml.Initializable;
-import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import sample.ClientApp;
+import sample.ClientMain;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,7 +18,7 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable{
 
     // Reference to the main application
-    private ClientApp clientApp;
+    private ClientMain clientApp;
     //FXML elements
     @FXML private TextField user;
     @FXML private PasswordField pw;
@@ -37,7 +36,7 @@ public class Controller implements Initializable{
      *
      * @param clientApp
      */
-    public void setMainApp(ClientApp clientApp) {
+    public void setMainApp(ClientMain clientApp) {
         this.clientApp = clientApp;
     }
 

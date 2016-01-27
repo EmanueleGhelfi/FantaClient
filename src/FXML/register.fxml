@@ -16,38 +16,64 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <JFXTextField fx:id="username" layoutX="295.0" layoutY="45.0" promptText="Username" />
-                  <JFXPasswordField fx:id="password1" layoutX="295.0" layoutY="89.0" promptText="Password" />
-                  <JFXPasswordField fx:id="password2" layoutX="295.0" layoutY="139.0" promptText="Password" />
-                  <JFXTextField fx:id="email" layoutX="295.0" layoutY="208.0" promptText="Email" />
-                  <DatePicker fx:id="date" layoutX="282.0" layoutY="255.0" />
-                  <Text layoutX="105.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data di Nascita" wrappingWidth="131.13671875" />
-                  <JFXCheckBox fx:id="confirm" layoutX="324.0" layoutY="303.0" />
-                  <Text layoutX="105.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dichiaro di accettare le email" wrappingWidth="184.13671875" />
-                   <JFXButton buttonType="RAISED" layoutX="158.0" layoutY="438.0" onAction="#GoToNextTab" prefHeight="25.0" prefWidth="126.0" ripplerFill="BLACK" style="-fx-background-color: cyan;" text="Next" />
-                  <Text layoutX="105.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="105.13671875" />
-                  <Text layoutX="105.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="80.13671875" />
-                  <Text layoutX="105.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conferma Password" wrappingWidth="112.13671875" />
-                  <Text layoutX="104.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="113.13671875" />
-                  <Text layoutX="105.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scegli foto" />
-                  <JFXButton fx:id="selectButton" layoutX="276.0" layoutY="361.0" onAction="#openFileChooser" text="Scegli">
+                  <JFXTextField fx:id="username" layoutX="617.0" layoutY="144.0" promptText="Username" />
+                  <JFXPasswordField fx:id="password1" layoutX="617.0" layoutY="188.0" promptText="Password" />
+                  <JFXPasswordField fx:id="password2" layoutX="617.0" layoutY="238.0" promptText="Password" />
+                  <JFXTextField fx:id="email" layoutX="617.0" layoutY="307.0" promptText="Email" />
+                  <DatePicker fx:id="date" layoutX="604.0" layoutY="354.0" />
+                  <Text layoutX="427.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data di Nascita" wrappingWidth="131.13671875">
+                     <font>
+                        <Font name="Segoe UI Light" size="12.0" />
+                     </font></Text>
+                  <JFXCheckBox fx:id="confirm" layoutX="646.0" layoutY="402.0" />
+                  <Text layoutX="427.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dichiaro di accettare le email" wrappingWidth="184.13671875">
+                     <font>
+                        <Font name="Segoe UI Light" size="12.0" />
+                     </font></Text>
+                   <JFXButton buttonType="RAISED" layoutX="548.0" layoutY="540.0" onAction="#GoToNextTab" prefHeight="25.0" prefWidth="126.0" ripplerFill="BLACK" style="-fx-background-color: #204d74;" text="Next" textFill="WHITE" />
+                  <Text layoutX="427.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="105.13671875">
+                     <font>
+                        <Font name="Segoe UI Light" size="12.0" />
+                     </font></Text>
+                  <Text layoutX="427.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="80.13671875">
+                     <font>
+                        <Font name="Segoe UI Light" size="12.0" />
+                     </font></Text>
+                  <Text layoutX="427.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conferma Password" wrappingWidth="112.13671875">
+                     <font>
+                        <Font name="Segoe UI Light" size="12.0" />
+                     </font></Text>
+                  <Text layoutX="426.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="113.13671875">
+                     <font>
+                        <Font name="Segoe UI Light" size="12.0" />
+                     </font></Text>
+                  <Text layoutX="427.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scegli foto">
+                     <font>
+                        <Font name="Segoe UI Light" size="12.0" />
+                     </font></Text>
+                  <JFXButton fx:id="selectButton" layoutX="598.0" layoutY="460.0" onAction="#openFileChooser" style="-fx-background-color: #204d74;" text="Scegli" textFill="WHITE">
                   </JFXButton>
-                  <ImageView fx:id="profileImage" fitHeight="80.0" fitWidth="94.0" layoutX="397.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="errorUser" fitHeight="30.0" fitWidth="25.0" layoutX="491.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="profileImage" fitHeight="80.0" fitWidth="94.0" layoutX="779.0" layoutY="440.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="errorUser" fitHeight="30.0" fitWidth="25.0" layoutX="813.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/cancelRegister.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="errorPassword" fitHeight="30.0" fitWidth="25.0" layoutX="491.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="errorPassword" fitHeight="30.0" fitWidth="25.0" layoutX="813.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/cancelRegister.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="errorEmail" fitHeight="30.0" fitWidth="25.0" layoutX="491.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="errorEmail" fitHeight="30.0" fitWidth="25.0" layoutX="813.0" layoutY="398.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/cancelRegister.png" />
                      </image>
                   </ImageView>
+                  <Label layoutX="490.0" layoutY="75.0" text="Crea una nuova squadra!" textFill="#204d74">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="24.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
         </content>
@@ -56,25 +82,40 @@
         <content>
             <ScrollPane prefHeight="738.0" prefViewportHeight="671.0" prefViewportWidth="1000.0" prefWidth="1000.0" style="-fx-background-color: white;">
                <content>
-                   <Pane id="pane" prefHeight="902.0" prefWidth="1206.0">
+                   <Pane id="pane" prefHeight="902.0" prefWidth="1200.0">
                        <children>
-                           <ListView fx:id="myPor" layoutX="14.0" layoutY="146.0" prefHeight="297.0" prefWidth="328.0" />
-                           <ListView fx:id="myAtk" layoutX="915.0" layoutY="147.0" prefHeight="298.0" prefWidth="260.0" />
+                           <ListView fx:id="myPor" layoutX="50.0" layoutY="150.0" prefHeight="297.0" prefWidth="250.0" />
+                           <ListView fx:id="myAtk" layoutX="875.0" layoutY="147.0" prefHeight="298.0" prefWidth="250.0" />
                            <Text layoutX="378.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hai ancora a disposizione:" wrappingWidth="234.13671875">
                               <font>
                                  <Font name="Century Gothic Bold" size="14.0" />
                               </font>
                            </Text>
-                            <JFXButton fx:id="confirmButton" buttonType="RAISED" layoutX="745.0" layoutY="46.0" onAction="#SendTeam" prefHeight="25.0" prefWidth="126.0" ripplerFill="BLACK" style="-fx-background-color: cyan;" text="Conferma" />
+                            <JFXButton fx:id="confirmButton" buttonType="RAISED" layoutX="745.0" layoutY="46.0" onAction="#SendTeam" prefHeight="25.0" prefWidth="126.0" ripplerFill="BLACK" style="-fx-background-color: #204d74;" text="Conferma" textFill="WHITE" />
                            <JFXTextField fx:id="teamName" layoutX="183.0" layoutY="44.0" promptText="TeamName" />
-                           <ListView fx:id="myDef" layoutX="354.0" layoutY="148.0" prefHeight="300.0" prefWidth="273.0" />
-                           <Label layoutX="94.0" layoutY="51.0" text="TeamName" />
-                           <Label layoutX="934.0" layoutY="121.0" prefHeight="17.0" prefWidth="198.0" text="Attaccanti" />
-                           <Label layoutX="640.0" layoutY="129.0" prefHeight="17.0" prefWidth="189.0" text="Centrocampisti" />
-                           <Label layoutX="21.0" layoutY="129.0" prefHeight="17.0" prefWidth="146.0" styleClass="labelCreate" text="Portieri" />
-                           <Label layoutX="354.0" layoutY="129.0" prefHeight="17.0" prefWidth="201.0" text="Difensori" />
-                           <ListView fx:id="myCen" layoutX="640.0" layoutY="147.0" prefHeight="301.0" prefWidth="262.0" />
-                           <TabPane layoutX="229.0" layoutY="502.0" prefHeight="400.0" prefWidth="542.0" tabClosingPolicy="UNAVAILABLE">
+                           <ListView fx:id="myDef" layoutX="325.0" layoutY="149.0" prefHeight="300.0" prefWidth="250.0" />
+                           <Label layoutX="94.0" layoutY="51.0" text="TeamName">
+                           <font>
+                              <Font name="Segoe UI Light" size="14.0" />
+                           </font></Label>
+                           <Label alignment="CENTER" layoutX="901.0" layoutY="116.0" prefHeight="17.0" prefWidth="198.0" text="Attaccanti" textFill="#204d74">
+                           <font>
+                              <Font name="Segoe UI Light" size="21.0" />
+                           </font></Label>
+                           <Label alignment="CENTER" layoutX="631.0" layoutY="116.0" prefHeight="17.0" prefWidth="189.0" text="Centrocampisti" textFill="#204d74">
+                           <font>
+                              <Font name="Segoe UI Light" size="21.0" />
+                           </font></Label>
+                           <Label alignment="CENTER" layoutX="102.0" layoutY="116.0" prefHeight="17.0" prefWidth="146.0" styleClass="labelCreate" text="Portieri" textAlignment="CENTER" textFill="#204d74">
+                           <font>
+                              <Font name="Segoe UI Light" size="21.0" />
+                           </font></Label>
+                           <Label alignment="CENTER" layoutX="350.0" layoutY="116.0" prefHeight="17.0" prefWidth="201.0" text="Difensori" textFill="#204d74">
+                           <font>
+                              <Font name="Segoe UI Light" size="21.0" />
+                           </font></Label>
+                           <ListView fx:id="myCen" layoutX="600.0" layoutY="146.0" prefHeight="301.0" prefWidth="250.0" />
+                           <TabPane layoutX="325.0" layoutY="507.0" prefHeight="400.0" prefWidth="550.0" tabClosingPolicy="UNAVAILABLE">
                              <tabs>
                                <Tab text="Portieri">
                                  <content>
