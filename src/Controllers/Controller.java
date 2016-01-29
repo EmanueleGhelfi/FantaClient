@@ -4,6 +4,7 @@ import Constants.Communication;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 
 import javafx.fxml.Initializable;
@@ -78,7 +79,11 @@ public class Controller implements Initializable{
     }
 
     public void Create(ActionEvent actionEvent) {
-        clientApp.changeApp("change");
+        if(ipText.getText()==null || ipText.getText().equals("")){
+            ShowError();
+        }
+        else
+            clientApp.changeApp(ipText.getText());
     }
 
     @Override
@@ -94,32 +99,36 @@ public class Controller implements Initializable{
         user.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                loginButton.setDisable(newValue.trim().isEmpty());
+                /*loginButton.setDisable(newValue.trim().isEmpty() || pw.getText()== null || pw.getText().equals(""));
                 user.getStyleClass().remove("redBorder");
                 userError.setVisible(false);
                 aut.setVisible(false);
+                */
+                DisableButtons(newValue,user,pw,ipText,userError);
             }
         });
 
         pw.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                //loginButton.setDisable(newValue.trim().isEmpty());
-                pw.getStyleClass().remove("redBorder");
-                pwError.setVisible(false);
-                aut.setVisible(false);
+                DisableButtons(newValue,pw,user,ipText,pwError);
             }
         });
 
         ipText.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                //loginButton.setDisable(newValue.trim().isEmpty());
-                ipText.getStyleClass().remove("redBorder");
-                ipError.setVisible(false);
-                aut.setVisible(false);
+                DisableButtons(newValue,ipText,pw,ipText,ipError);
             }
         });
+    }
+
+
+    public void DisableButtons(String newValue, TextField current, TextField other1, TextField other2, ImageView imageView){
+        loginButton.setDisable(newValue.trim().isEmpty() || other1.getText()== null || other1.getText().equals("") || other2.getText()==null || other2.getText().equals(""));
+        current.getStyleClass().remove("redBorder");
+        imageView.setVisible(false);
+        aut.setVisible(false);
     }
 
     public void ShowError() {
@@ -133,5 +142,9 @@ public class Controller implements Initializable{
         pw.setDisable(false);
         ipText.setDisable(false);
 
+    }
+
+    public void DoLogin(ActionEvent actionEvent) {
+        Send(actionEvent);
     }
 }

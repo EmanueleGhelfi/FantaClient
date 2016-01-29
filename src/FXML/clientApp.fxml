@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.control.*?>
@@ -13,10 +14,16 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" stylesheets="@../CSS/logincss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller">
    <children>
-      <TextField fx:id="user" layoutX="236.0" layoutY="151.0" />
-      <PasswordField fx:id="pw" layoutX="236.0" layoutY="188.0" />
-      <Button fx:id="loginButton" layoutX="236.0" layoutY="275.0" mnemonicParsing="false" onAction="#Send" prefHeight="25.0" prefWidth="149.0" text="Login" />
-      <Button fx:id="createButton" layoutX="236.0" layoutY="318.0" mnemonicParsing="false" onAction="#Create" prefHeight="25.0" prefWidth="149.0" text="Create New Team" />
+      <TextField fx:id="user" layoutX="236.0" layoutY="151.0" onAction="#DoLogin" />
+      <PasswordField fx:id="pw" layoutX="236.0" layoutY="188.0" onAction="#DoLogin" />
+      <Button fx:id="loginButton" layoutX="236.0" layoutY="275.0" mnemonicParsing="false" onAction="#Send" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #143153;" text="LOGIN" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Light" size="12.0" />
+         </font></Button>
+      <Button fx:id="createButton" layoutX="236.0" layoutY="318.0" mnemonicParsing="false" onAction="#Create" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #143153;" text="CREATE NEW TEAM" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Light" size="12.0" />
+         </font></Button>
       <Label layoutX="159.0" layoutY="155.0" prefHeight="17.0" prefWidth="45.0" text="User">
          <font>
             <Font name="Segoe UI Light" size="12.0" />
@@ -29,7 +36,7 @@
          <font>
             <Font size="10.0" />
          </font></Text>
-      <TextField fx:id="ipText" layoutX="236.0" layoutY="225.0" text="localhost" />
+      <TextField fx:id="ipText" layoutX="236.0" layoutY="225.0" onAction="#DoLogin" text="localhost" />
       <Label layoutX="159.0" layoutY="229.0" text="Ip">
          <font>
             <Font name="Segoe UI Light" size="12.0" />

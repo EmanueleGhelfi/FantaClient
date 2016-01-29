@@ -2027,10 +2027,10 @@ public class HomeController extends BaseController{
         try {
             Date dateOfTheNextDay = format.parse(date);
             //TODO: rimettere
-            /*if(today.after(dateOfTheNextDay)){
+            if(today.after(dateOfTheNextDay) || date.equals("3915-09-15 00:00:00")){
                 buttonSchiera.setDisable(true);
             }
-            */
+
 
         } catch (ParseException e) {
             e.printStackTrace();

@@ -38,6 +38,12 @@
     -fx-text-fill: white;
 }
 
+.button:hover{
+    -fx-background-color: #269abc;
+}
+
+
+
 .nav:hover{
     -fx-background-color: #204d74;
     -fx-scale-y: 120%;
@@ -52,11 +58,19 @@
     -fx-text-fill: white;
 }
 
+.removeButton:hover{
+    -fx-background-color: firebrick;
+}
+
 .buttonCompra{
     -fx-background-color: limegreen;
     -fx-font-size: 10;
     -fx-padding: 2;
     -fx-text-fill: white;
+}
+
+.buttonCompra:hover{
+    -fx-background-color: #4cae4c;
 }
 
 .infoButton{
@@ -309,6 +323,30 @@
 
 .paneCursor:hover{
     -fx-cursor: hand;
+}
+
+.tabPaneMercato *.tab-header-background {
+    -fx-background-color: white;
+    -fx-pref-height: 30px;
+}
+
+
+.tabPaneMercato .tab {
+    -fx-pref-height: 50px;
+    -fx-font-size: 15pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: #FFFFFF;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+    -fx-background-color: #2e6da4;
+}
+
+.tabPaneMercato .tab *.tab-label{
+    -fx-text-fill: white;
+}
+
+.tabPaneMercato .tab:selected{
+    -fx-background-color: #269abc;
 }
 
 

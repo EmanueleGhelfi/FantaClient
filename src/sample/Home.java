@@ -608,6 +608,7 @@ public class Home extends Application {
             @Override
             public void run() {
                 // Create the custom dialog.
+                /*
                 dialog = new Dialog<>();
                 dialog.setTitle("Login Dialog");
                 dialog.setHeaderText("ATTENZIONE, server disconnesso! Prova ad autenticarti");
@@ -683,8 +684,16 @@ public class Home extends Application {
                     //System.out.println("Username=" + usernamePassword.getKey() + ", Password=" + usernamePassword.getValue());
                     //RetryLogin(usernamePassword.getKey(),usernamePassword.getValue());
                 });
-
+                */
+                ClientMain clientMain = new ClientMain();
+                primaryStage.close();
+                try {
+                    clientMain.start(new Stage());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
+
         });
 
 

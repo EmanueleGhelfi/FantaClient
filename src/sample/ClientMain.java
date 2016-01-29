@@ -141,24 +141,45 @@ public class ClientMain extends Application {
 
     }
 
-    public void changeApp(String text){
+    public void changeApp(String ip){
        // controller.setOutput(text);
-        client = new ClientClass("localhost");
-        client.init();
-        Platform.runLater(new Runnable() {
+        client = new ClientClass(ip);
+        Task task = new Task() {
             @Override
-            public void run() {
-                RegisterMain app2 = new RegisterMain(client);
-                try {
-                    app2.start(new Stage());
-                    active=false;
-                    primaryStage.close();
-                    //Platform.exit();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            protected Object call() throws Exception {
+                if(client.init()) {
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            RegisterMain app2 = new RegisterMain(client);
+                            try {
+                                app2.start(new Stage());
+                                active = false;
+                                primaryStage.close();
+                                //Platform.exit();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                return null;
             }
-        });
+                else {
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            controller.ShowError();
+                        }
+                    });
+                    return null;
+                }
+        }
+
+        };
+
+        Thread thread = new Thread(task);
+        thread.start();
+
 
     }
 

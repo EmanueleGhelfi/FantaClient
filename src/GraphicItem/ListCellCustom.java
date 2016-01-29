@@ -2,6 +2,7 @@ package GraphicItem;
 
 import Controllers.MercatoController;
 import Model.Player;
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -60,7 +61,7 @@ public class ListCellCustom extends javafx.scene.control.ListCell <Player>{
             Text cost = new Text(String.valueOf(item.getCosto()));
             gridPane.add(cost,1,0);
 
-            Button button = new Button();
+            Button button = new JFXButton();
             button.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {

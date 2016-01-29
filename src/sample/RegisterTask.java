@@ -6,6 +6,7 @@ import Model.ClientClass;
 import Model.CommunicationInfo;
 import Model.Player;
 import Utils.CommunicationUtils;
+import Utils.FileUtils;
 import com.google.gson.Gson;
 import javafx.concurrent.Task;
 
@@ -43,7 +44,7 @@ public class RegisterTask extends Task {
                 switch (communicationInfo.getCode()){
                     case(Communication.FILE):
                         //TODO: SEND FILE
-                        SendFile();
+                        FileUtils.UploadFile(clientApp.getSelectedFile(),client.getSocket().getOutputStream());
                         break;
                     case(Communication.AUTHOK):
                         active=false;
@@ -71,7 +72,7 @@ public class RegisterTask extends Task {
         clientApp.ShowError();
     }
 
-    private void SendFile() {
+    /*private void SendFile() {
         File myFile = clientApp.getSelectedFile();
         try {
             OutputStream outputStream = client.getSocket().getOutputStream();
@@ -97,6 +98,7 @@ public class RegisterTask extends Task {
             e.printStackTrace();
         }
     }
+    */
 
     private void GetPlayersFromServer(String info) {
 

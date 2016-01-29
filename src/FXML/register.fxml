@@ -10,7 +10,7 @@
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 
-<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RegisterController">
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000" prefWidth="1200.0" stylesheets="@../CSS/registercss1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RegisterController">
    <tabs>
       <Tab closable="false" text="Profile">
         <content>
@@ -80,7 +80,7 @@
       </Tab>
       <Tab closable="false" text="Team">
         <content>
-            <ScrollPane prefHeight="738.0" prefViewportHeight="671.0" prefViewportWidth="1000.0" prefWidth="1000.0" style="-fx-background-color: white;">
+            <ScrollPane hbarPolicy="NEVER" prefHeight="738.0" prefViewportHeight="671.0" prefViewportWidth="1000.0" prefWidth="1000.0" style="-fx-background-color: white;">
                <content>
                    <Pane id="pane" prefHeight="902.0" prefWidth="1200.0">
                        <children>
@@ -115,7 +115,7 @@
                               <Font name="Segoe UI Light" size="21.0" />
                            </font></Label>
                            <ListView fx:id="myCen" layoutX="600.0" layoutY="146.0" prefHeight="301.0" prefWidth="250.0" />
-                           <TabPane layoutX="325.0" layoutY="507.0" prefHeight="400.0" prefWidth="550.0" tabClosingPolicy="UNAVAILABLE">
+                           <TabPane layoutX="325.0" layoutY="507.0" prefHeight="400.0" prefWidth="550.0" styleClass="mytab" tabClosingPolicy="UNAVAILABLE" tabMaxWidth="200.0" tabMinWidth="105.0">
                              <tabs>
                                <Tab text="Portieri">
                                  <content>

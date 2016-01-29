@@ -3,6 +3,7 @@ package sample;
 import Constants.Communication;
 import Model.*;
 import Utils.CommunicationUtils;
+import Utils.FileUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import javafx.concurrent.Task;
@@ -87,7 +88,7 @@ public class HomeTask extends Task {
                                 AskResultToServer();
                                 break;
                             case (Communication.FILE):
-                                UploadImage();
+                                FileUtils.UploadFile(homeApp.getSelectedFile(),client.getSocket().getOutputStream());
                                 break;
                             case (Communication.USEROK):
                                 OnUserOK();
@@ -114,15 +115,14 @@ public class HomeTask extends Task {
                                 homeApp.setNeedToConnect(false);
                                 homeApp.ShowLoginDialog();
                                 break;
-                            case("GETMONEY"):
+                            case(Communication.GETMONEY):
                                 client.getOut().println(""+homeApp.getUser().getSoldi());
                                 System.out.println("Sent money");
                                 break;
-                            case("END"):
-                                System.out.println("NEL CASE");
+                            case(Communication.END):
                                 ReceiveEndPos(communicationInfo.getInfo());
                                 break;
-                            case("READYFORDATE"):
+                            case(Communication.READYFORDATE):
                                 ReceiveDateFromServer(communicationInfo.getInfo());
                                 break;
                         }
@@ -192,36 +192,10 @@ public class HomeTask extends Task {
         client.getOut().println(gson2.toJson(formazione));
     }
 
-    private void UploadImage() {
-        File myFile = homeApp.getSelectedFile();
-        try {
-            OutputStream outputStream = client.getSocket().getOutputStream();
-            BufferedImage image = ImageIO.read(myFile);
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            ImageIO.write(image,"jpg",byteArrayOutputStream);
-            byteArrayOutputStream.flush();
-
-            byte[] bytes = byteArrayOutputStream.toByteArray();
-            byteArrayOutputStream.close();
-
-            System.out.println("Sending image to server. :"+bytes.length);
-            DataOutputStream dos = new DataOutputStream(outputStream);
-
-            dos.writeInt(bytes.length);
-            dos.write(bytes,0,bytes.length);
-            System.out.println("Image sent to server. ");
-
-
-
-            System.out.println("Transfer Complete");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     //function called if the users doesn't have a profile image
     private void AskResultToServer() {
-        client.getOut().println(Communication.GETRESULTS);
+        CommunicationUtils.SendCommunicationInfo(client.getOut(),Communication.GETRESULTS,"");
     }
 
     private void GetResultsFromServer(String resultString) {

@@ -31,6 +31,7 @@ public class ClientClass {
     }
 
     public boolean init(){
+        System.out.println("HOSTNAME"+hostName);
         try {
             socket = new Socket(hostName, portNumber);
             out = new PrintWriter(socket.getOutputStream(), true);

@@ -90,7 +90,6 @@ public class RegisterMain extends Application {
         //Parent root = loader.load(getClass().getResource("clientApp.fxml"));
         primaryStage.setTitle("Hello World");
         Scene scene = new Scene(root,1200,1000);
-        scene.getStylesheets().add(getClass().getResource("/CSS/registercss1.css").toExternalForm());
         primaryStage.setScene(scene);
         //Handle click on x
             primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {

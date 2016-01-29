@@ -58,7 +58,7 @@
         </ToolBar>
     </top>
    <center>
-      <ScrollPane prefHeight="300.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <ScrollPane hbarPolicy="NEVER" prefHeight="300.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="699.0" prefWidth="1190.0" style="-fx-background-color: white;">
                <children>
@@ -66,7 +66,7 @@
                   <ListView fx:id="listDef" layoutX="303.0" layoutY="60.0" prefHeight="262.0" prefWidth="277.0" />
                   <ListView fx:id="listCen" layoutX="595.0" layoutY="60.0" prefHeight="262.0" prefWidth="277.0" />
                   <ListView fx:id="listAtk" layoutX="895.0" layoutY="60.0" prefHeight="263.0" prefWidth="277.0" />
-                  <TabPane layoutX="256.0" layoutY="340.0" prefHeight="332.0" prefWidth="539.0" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane layoutX="256.0" layoutY="340.0" prefHeight="332.0" prefWidth="540.0" styleClass="tabPaneMercato" tabClosingPolicy="UNAVAILABLE" tabMaxWidth="200.0" tabMinWidth="100.0">
                     <tabs>
                       <Tab text="Portieri">
                         <content>
@@ -149,7 +149,7 @@
                      <padding>
                         <Insets left="10.0" />
                      </padding></Label>
-                  <Button layoutX="60.0" layoutY="426.0" mnemonicParsing="false" onAction="#SendTeamToServer" prefHeight="36.0" prefWidth="145.0" text="Conferma!" />
+                  <Button layoutX="60.0" layoutY="426.0" mnemonicParsing="false" onAction="#SendTeamToServer" prefHeight="36.0" prefWidth="145.0" text="SAVE!" />
                   <Label layoutX="121.0" layoutY="25.0" text="Portieri" textFill="#0c88c6">
                      <font>
                         <Font name="Segoe UI Light" size="20.0" />

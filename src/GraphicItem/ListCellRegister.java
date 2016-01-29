@@ -8,7 +8,9 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
+import javafx.scene.control.OverrunStyle;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
@@ -45,23 +47,25 @@ public class ListCellRegister extends ListCell<Player> {
             */
 
             ColumnConstraints col1 = new ColumnConstraints();
-            col1.setPercentWidth(20);
+            col1.setPercentWidth(50);
             ColumnConstraints col2 = new ColumnConstraints();
-            col2.setPercentWidth(20);
+            col2.setPercentWidth(10);
             ColumnConstraints col3 = new ColumnConstraints();
-            col3.setPercentWidth(5);
-            ColumnConstraints col4 = new ColumnConstraints();
-            col3.setPercentWidth(20);
-            gridPane.getColumnConstraints().addAll(col1,col2,col3,col4);
+            col3.setPercentWidth(40);
 
-            Text name = new Text(item.getCognome());
+            gridPane.getColumnConstraints().addAll(col1,col2,col3);
+
+            Label name = new Label(item.getCognome());
+            name.setTextOverrun(OverrunStyle.ELLIPSIS);
+
             gridPane.add(name,0,0);
 
-            Text team = new Text((item.getSquadra()));
+            /*Text team = new Text((item.getSquadra()));
             gridPane.add(team,1,0);
+            */
 
             Text cost = new Text(String.valueOf(item.getCosto()));
-            gridPane.add(cost,2,0);
+            gridPane.add(cost,1,0);
 
             JFXButton button = new JFXButton();
             button.setOnAction(new EventHandler<ActionEvent>() {
@@ -72,12 +76,12 @@ public class ListCellRegister extends ListCell<Player> {
                 }
             });
             //button.setPrefWidth(60.00);
-            button.setPrefHeight(10.00);
+            button.setPrefHeight(5.00);
             button.setText("REMOVE");
             button.getStyleClass().add("removeJFXButton");
-            button.setButtonType(JFXButton.ButtonType.RAISED);
+            button.setButtonType(JFXButton.ButtonType.FLAT);
 
-            gridPane.add(button,3,0);
+            gridPane.add(button,2,0);
 
             setGraphic(gridPane);
         }
