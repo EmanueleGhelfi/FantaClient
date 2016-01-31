@@ -158,7 +158,8 @@ public class Home extends Application {
             controller.initView();
             //Parent root = loader.load(getClass().getResource("clientApp.fxml"));
 
-            /*primaryStage.setTitle("Hello World");
+            primaryStage.setTitle("Manu's FantaClient");
+            /*
             primaryStage.setScene(new Scene(root, 950, 478));
             */
 

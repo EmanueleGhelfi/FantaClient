@@ -101,9 +101,11 @@ public class RegisterMain extends Application {
                 @Override
                 public void handle(WindowEvent t) {
                     Platform.exit();
+                    System.exit(0);
                 }
 
             });
+
         primaryStage.show();
             RegisterTask task = new RegisterTask(this,client.getOut(),client.getIn(),client);
             new Thread(task).start();
