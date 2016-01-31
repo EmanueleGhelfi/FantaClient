@@ -48,7 +48,7 @@
                         <Text fx:id="welcomeText" fill="WHITE" layoutX="14.0" layoutY="14.0" text="Benvenuto, [nome]! Ecco la squadra [Nome Squadra]" wrappingWidth="395.0">
 
                         </Text>
-                        <Text fill="#fffafa" layoutX="14.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trascina i giocatori dalla tabella nella loro posizione e poi clicca schiera!" wrappingWidth="417.13671875" />
+                        <Text fill="#fffafa" layoutX="14.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trascina i giocatori dalla tabella alla loro posizione e poi clicca schiera!" wrappingWidth="417.13671875" />
                     </children>
                 </Pane>
             <JFXButton fx:id="buttonReset" layoutX="369.0" layoutY="604.0" onAction="#resetTeam" prefHeight="25.0" prefWidth="153.0" text="RESET" />

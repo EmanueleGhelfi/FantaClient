@@ -19,6 +19,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -87,8 +88,11 @@ public class RegisterMain extends Application {
         controller = loader.getController();
         controller.setMainApp(this);
         controller.initView();
+
+        primaryStage.setResizable(false);
         //Parent root = loader.load(getClass().getResource("clientApp.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Register");
+        primaryStage.getIcons().add(new Image("/Images/icon.png"));
         Scene scene = new Scene(root,1200,1000);
         primaryStage.setScene(scene);
         //Handle click on x

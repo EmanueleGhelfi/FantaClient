@@ -162,7 +162,6 @@ public class Home extends Application {
             primaryStage.setScene(new Scene(root, 950, 478));
             */
 
-            // TODO: For icons
             primaryStage.getIcons().add(new Image("/Images/icon.png"));
 
             root = new Group();

@@ -297,6 +297,7 @@ public class RegisterController extends BaseController {
         System.out.println("CREATE");
         String teamString = teamName.getText();
         String passwordString = password1.getText();
+        String passwordString2=password2.getText();
         String userName = username.getText();
         String textEmail = email.getText();
         LocalDate mydate = date.getValue();
@@ -305,7 +306,7 @@ public class RegisterController extends BaseController {
         myTeam.addAll(arrayDif);
         myTeam.addAll(arrayCen);
         myTeam.addAll(arrayAtk);
-        if(myTeam.size()==(maxcen+maxdif+maxport+maxatt) && (teamString!="" && teamString!=null) && (passwordString!= "" && passwordString!=null) && (userName!= "" && userName!=null) && (textEmail!="" && textEmail!=null) && mydate!=null && selectedFile!=null){
+        if(myTeam.size()==(maxcen+maxdif+maxport+maxatt) && (teamString!="" && teamString!=null) && (passwordString!= "" && passwordString!=null) && (userName!= "" && userName!=null) && (textEmail!=null&&textEmail!="" ) && mydate!=null && selectedFile!=null && (passwordString2!=null && passwordString2.equals(passwordString))){
             try {
                 //clientApp.SendTeam(new User(mydate,textEmail,passwordString,myTeam,teamString,userName),selectedFile);
                 User user = new User(mydate,textEmail,passwordString,myTeam,teamString,userName);
